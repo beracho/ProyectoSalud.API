@@ -1,0 +1,12 @@
+*/bin
+/bin
+*/obj
+/obj
+/wwwroot
+/Logs
+/appsettings.json
+/appsettings.Development.json
+.vs/ProyectoSalud.API/v15/.suo
+ProyectoSalud.API.csproj
+.vs
+/packages

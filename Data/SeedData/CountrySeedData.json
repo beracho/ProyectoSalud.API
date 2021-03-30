@@ -1,0 +1,1211 @@
+[{
+    "Name": "Undefined",
+    "PhoneCode": "",
+    "Code": "",
+    "Currency": ""
+}, {
+    "Name": "Afghanistan",
+    "PhoneCode": "+93",
+    "Code": "AF",
+    "Currency": ""
+}, {
+    "Name": "Albania",
+    "PhoneCode": "+355",
+    "Code": "AL",
+    "Currency": ""
+}, {
+    "Name": "Algeria",
+    "PhoneCode": "+213",
+    "Code": "DZ",
+    "Currency": ""
+}, {
+    "Name": "AmericanSamoa",
+    "PhoneCode": "+1 684",
+    "Code": "AS",
+    "Currency": ""
+}, {
+    "Name": "Andorra",
+    "PhoneCode": "+376",
+    "Code": "AD",
+    "Currency": ""
+}, {
+    "Name": "Angola",
+    "PhoneCode": "+244",
+    "Code": "AO",
+    "Currency": ""
+}, {
+    "Name": "Anguilla",
+    "PhoneCode": "+1 264",
+    "Code": "AI",
+    "Currency": ""
+}, {
+    "Name": "Antigua and Barbuda",
+    "PhoneCode": "+1268",
+    "Code": "AG",
+    "Currency": ""
+}, {
+    "Name": "Argentina",
+    "PhoneCode": "+54",
+    "Code": "AR",
+    "Currency": ""
+}, {
+    "Name": "Armenia",
+    "PhoneCode": "+374",
+    "Code": "AM",
+    "Currency": ""
+}, {
+    "Name": "Aruba",
+    "PhoneCode": "+297",
+    "Code": "AW",
+    "Currency": ""
+}, {
+    "Name": "Australia",
+    "PhoneCode": "+61",
+    "Code": "AU",
+    "Currency": ""
+}, {
+    "Name": "Austria",
+    "PhoneCode": "+43",
+    "Code": "AT",
+    "Currency": ""
+}, {
+    "Name": "Azerbaijan",
+    "PhoneCode": "+994",
+    "Code": "AZ",
+    "Currency": ""
+}, {
+    "Name": "Bahamas",
+    "PhoneCode": "+1 242",
+    "Code": "BS",
+    "Currency": ""
+}, {
+    "Name": "Bahrain",
+    "PhoneCode": "+973",
+    "Code": "BH",
+    "Currency": ""
+}, {
+    "Name": "Bangladesh",
+    "PhoneCode": "+880",
+    "Code": "BD",
+    "Currency": ""
+}, {
+    "Name": "Barbados",
+    "PhoneCode": "+1 246",
+    "Code": "BB",
+    "Currency": ""
+}, {
+    "Name": "Belarus",
+    "PhoneCode": "+375",
+    "Code": "BY",
+    "Currency": ""
+}, {
+    "Name": "Belgium",
+    "PhoneCode": "+32",
+    "Code": "BE",
+    "Currency": ""
+}, {
+    "Name": "Belize",
+    "PhoneCode": "+501",
+    "Code": "BZ",
+    "Currency": ""
+}, {
+    "Name": "Benin",
+    "PhoneCode": "+229",
+    "Code": "BJ",
+    "Currency": ""
+}, {
+    "Name": "Bermuda",
+    "PhoneCode": "+1 441",
+    "Code": "BM",
+    "Currency": ""
+}, {
+    "Name": "Bhutan",
+    "PhoneCode": "+975",
+    "Code": "BT",
+    "Currency": ""
+}, {
+    "Name": "Bosnia and Herzegovina",
+    "PhoneCode": "+387",
+    "Code": "BA",
+    "Currency": ""
+}, {
+    "Name": "Botswana",
+    "PhoneCode": "+267",
+    "Code": "BW",
+    "Currency": ""
+}, {
+    "Name": "Brazil",
+    "PhoneCode": "+55",
+    "Code": "BR",
+    "Currency": ""
+}, {
+    "Name": "British Indian Ocean Territory",
+    "PhoneCode": "+246",
+    "Code": "IO",
+    "Currency": ""
+}, {
+    "Name": "Bulgaria",
+    "PhoneCode": "+359",
+    "Code": "BG",
+    "Currency": ""
+}, {
+    "Name": "Burkina Faso",
+    "PhoneCode": "+226",
+    "Code": "BF",
+    "Currency": ""
+}, {
+    "Name": "Burundi",
+    "PhoneCode": "+257",
+    "Code": "BI",
+    "Currency": ""
+}, {
+    "Name": "Cambodia",
+    "PhoneCode": "+855",
+    "Code": "KH",
+    "Currency": ""
+}, {
+    "Name": "Cameroon",
+    "PhoneCode": "+237",
+    "Code": "CM",
+    "Currency": ""
+}, {
+    "Name": "Canada",
+    "PhoneCode": "+1",
+    "Code": "CA",
+    "Currency": ""
+}, {
+    "Name": "Cape Verde",
+    "PhoneCode": "+238",
+    "Code": "CV",
+    "Currency": ""
+}, {
+    "Name": "Cayman Islands",
+    "PhoneCode": "+ 345",
+    "Code": "KY",
+    "Currency": ""
+}, {
+    "Name": "Central African Republic",
+    "PhoneCode": "+236",
+    "Code": "CF",
+    "Currency": ""
+}, {
+    "Name": "Chad",
+    "PhoneCode": "+235",
+    "Code": "TD",
+    "Currency": ""
+}, {
+    "Name": "Chile",
+    "PhoneCode": "+56",
+    "Code": "CL",
+    "Currency": ""
+}, {
+    "Name": "China",
+    "PhoneCode": "+86",
+    "Code": "CN",
+    "Currency": ""
+}, {
+    "Name": "Christmas Island",
+    "PhoneCode": "+61",
+    "Code": "CX",
+    "Currency": ""
+}, {
+    "Name": "Colombia",
+    "PhoneCode": "+57",
+    "Code": "CO",
+    "Currency": ""
+}, {
+    "Name": "Comoros",
+    "PhoneCode": "+269",
+    "Code": "KM",
+    "Currency": ""
+}, {
+    "Name": "Congo",
+    "PhoneCode": "+242",
+    "Code": "CG",
+    "Currency": ""
+}, {
+    "Name": "Cook Islands",
+    "PhoneCode": "+682",
+    "Code": "CK",
+    "Currency": ""
+}, {
+    "Name": "Costa Rica",
+    "PhoneCode": "+506",
+    "Code": "CR",
+    "Currency": ""
+}, {
+    "Name": "Croatia",
+    "PhoneCode": "+385",
+    "Code": "HR",
+    "Currency": ""
+}, {
+    "Name": "Cuba",
+    "PhoneCode": "+53",
+    "Code": "CU",
+    "Currency": ""
+}, {
+    "Name": "Cyprus",
+    "PhoneCode": "+537",
+    "Code": "CY",
+    "Currency": ""
+}, {
+    "Name": "Czech Republic",
+    "PhoneCode": "+420",
+    "Code": "CZ",
+    "Currency": ""
+}, {
+    "Name": "Denmark",
+    "PhoneCode": "+45",
+    "Code": "DK",
+    "Currency": ""
+}, {
+    "Name": "Djibouti",
+    "PhoneCode": "+253",
+    "Code": "DJ",
+    "Currency": ""
+}, {
+    "Name": "Dominica",
+    "PhoneCode": "+1 767",
+    "Code": "DM",
+    "Currency": ""
+}, {
+    "Name": "Dominican Republic",
+    "PhoneCode": "+1 849",
+    "Code": "DO",
+    "Currency": ""
+}, {
+    "Name": "Ecuador",
+    "PhoneCode": "+593",
+    "Code": "EC",
+    "Currency": ""
+}, {
+    "Name": "Egypt",
+    "PhoneCode": "+20",
+    "Code": "EG",
+    "Currency": ""
+}, {
+    "Name": "El Salvador",
+    "PhoneCode": "+503",
+    "Code": "SV",
+    "Currency": ""
+}, {
+    "Name": "Equatorial Guinea",
+    "PhoneCode": "+240",
+    "Code": "GQ",
+    "Currency": ""
+}, {
+    "Name": "Eritrea",
+    "PhoneCode": "+291",
+    "Code": "ER",
+    "Currency": ""
+}, {
+    "Name": "Estonia",
+    "PhoneCode": "+372",
+    "Code": "EE",
+    "Currency": ""
+}, {
+    "Name": "Ethiopia",
+    "PhoneCode": "+251",
+    "Code": "ET",
+    "Currency": ""
+}, {
+    "Name": "Faroe Islands",
+    "PhoneCode": "+298",
+    "Code": "FO",
+    "Currency": ""
+}, {
+    "Name": "Fiji",
+    "PhoneCode": "+679",
+    "Code": "FJ",
+    "Currency": ""
+}, {
+    "Name": "Finland",
+    "PhoneCode": "+358",
+    "Code": "FI",
+    "Currency": ""
+}, {
+    "Name": "France",
+    "PhoneCode": "+33",
+    "Code": "FR",
+    "Currency": ""
+}, {
+    "Name": "French Guiana",
+    "PhoneCode": "+594",
+    "Code": "GF",
+    "Currency": ""
+}, {
+    "Name": "French Polynesia",
+    "PhoneCode": "+689",
+    "Code": "PF",
+    "Currency": ""
+}, {
+    "Name": "Gabon",
+    "PhoneCode": "+241",
+    "Code": "GA",
+    "Currency": ""
+}, {
+    "Name": "Gambia",
+    "PhoneCode": "+220",
+    "Code": "GM",
+    "Currency": ""
+}, {
+    "Name": "Georgia",
+    "PhoneCode": "+995",
+    "Code": "GE",
+    "Currency": ""
+}, {
+    "Name": "Germany",
+    "PhoneCode": "+49",
+    "Code": "DE",
+    "Currency": ""
+}, {
+    "Name": "Ghana",
+    "PhoneCode": "+233",
+    "Code": "GH",
+    "Currency": ""
+}, {
+    "Name": "Gibraltar",
+    "PhoneCode": "+350",
+    "Code": "GI",
+    "Currency": ""
+}, {
+    "Name": "Greece",
+    "PhoneCode": "+30",
+    "Code": "GR",
+    "Currency": ""
+}, {
+    "Name": "Greenland",
+    "PhoneCode": "+299",
+    "Code": "GL",
+    "Currency": ""
+}, {
+    "Name": "Grenada",
+    "PhoneCode": "+1 473",
+    "Code": "GD",
+    "Currency": ""
+}, {
+    "Name": "Guadeloupe",
+    "PhoneCode": "+590",
+    "Code": "GP",
+    "Currency": ""
+}, {
+    "Name": "Guam",
+    "PhoneCode": "+1 671",
+    "Code": "GU",
+    "Currency": ""
+}, {
+    "Name": "Guatemala",
+    "PhoneCode": "+502",
+    "Code": "GT",
+    "Currency": ""
+}, {
+    "Name": "Guinea",
+    "PhoneCode": "+224",
+    "Code": "GN",
+    "Currency": ""
+}, {
+    "Name": "Guinea-Bissau",
+    "PhoneCode": "+245",
+    "Code": "GW",
+    "Currency": ""
+}, {
+    "Name": "Guyana",
+    "PhoneCode": "+595",
+    "Code": "GY",
+    "Currency": ""
+}, {
+    "Name": "Haiti",
+    "PhoneCode": "+509",
+    "Code": "HT",
+    "Currency": ""
+}, {
+    "Name": "Honduras",
+    "PhoneCode": "+504",
+    "Code": "HN",
+    "Currency": ""
+}, {
+    "Name": "Hungary",
+    "PhoneCode": "+36",
+    "Code": "HU",
+    "Currency": ""
+}, {
+    "Name": "Iceland",
+    "PhoneCode": "+354",
+    "Code": "IS",
+    "Currency": ""
+}, {
+    "Name": "India",
+    "PhoneCode": "+91",
+    "Code": "IN",
+    "Currency": ""
+}, {
+    "Name": "Indonesia",
+    "PhoneCode": "+62",
+    "Code": "ID",
+    "Currency": ""
+}, {
+    "Name": "Iraq",
+    "PhoneCode": "+964",
+    "Code": "IQ",
+    "Currency": ""
+}, {
+    "Name": "Ireland",
+    "PhoneCode": "+353",
+    "Code": "IE",
+    "Currency": ""
+}, {
+    "Name": "Israel",
+    "PhoneCode": "+972",
+    "Code": "IL",
+    "Currency": ""
+}, {
+    "Name": "Italy",
+    "PhoneCode": "+39",
+    "Code": "IT",
+    "Currency": ""
+}, {
+    "Name": "Jamaica",
+    "PhoneCode": "+1 876",
+    "Code": "JM",
+    "Currency": ""
+}, {
+    "Name": "Japan",
+    "PhoneCode": "+81",
+    "Code": "JP",
+    "Currency": ""
+}, {
+    "Name": "Jordan",
+    "PhoneCode": "+962",
+    "Code": "JO",
+    "Currency": ""
+}, {
+    "Name": "Kazakhstan",
+    "PhoneCode": "+7 7",
+    "Code": "KZ",
+    "Currency": ""
+}, {
+    "Name": "Kenya",
+    "PhoneCode": "+254",
+    "Code": "KE",
+    "Currency": ""
+}, {
+    "Name": "Kiribati",
+    "PhoneCode": "+686",
+    "Code": "KI",
+    "Currency": ""
+}, {
+    "Name": "Kuwait",
+    "PhoneCode": "+965",
+    "Code": "KW",
+    "Currency": ""
+}, {
+    "Name": "Kyrgyzstan",
+    "PhoneCode": "+996",
+    "Code": "KG",
+    "Currency": ""
+}, {
+    "Name": "Latvia",
+    "PhoneCode": "+371",
+    "Code": "LV",
+    "Currency": ""
+}, {
+    "Name": "Lebanon",
+    "PhoneCode": "+961",
+    "Code": "LB",
+    "Currency": ""
+}, {
+    "Name": "Lesotho",
+    "PhoneCode": "+266",
+    "Code": "LS",
+    "Currency": ""
+}, {
+    "Name": "Liberia",
+    "PhoneCode": "+231",
+    "Code": "LR",
+    "Currency": ""
+}, {
+    "Name": "Liechtenstein",
+    "PhoneCode": "+423",
+    "Code": "LI",
+    "Currency": ""
+}, {
+    "Name": "Lithuania",
+    "PhoneCode": "+370",
+    "Code": "LT",
+    "Currency": ""
+}, {
+    "Name": "Luxembourg",
+    "PhoneCode": "+352",
+    "Code": "LU",
+    "Currency": ""
+}, {
+    "Name": "Madagascar",
+    "PhoneCode": "+261",
+    "Code": "MG",
+    "Currency": ""
+}, {
+    "Name": "Malawi",
+    "PhoneCode": "+265",
+    "Code": "MW",
+    "Currency": ""
+}, {
+    "Name": "Malaysia",
+    "PhoneCode": "+60",
+    "Code": "MY",
+    "Currency": ""
+}, {
+    "Name": "Maldives",
+    "PhoneCode": "+960",
+    "Code": "MV",
+    "Currency": ""
+}, {
+    "Name": "Mali",
+    "PhoneCode": "+223",
+    "Code": "ML",
+    "Currency": ""
+}, {
+    "Name": "Malta",
+    "PhoneCode": "+356",
+    "Code": "MT",
+    "Currency": ""
+}, {
+    "Name": "Marshall Islands",
+    "PhoneCode": "+692",
+    "Code": "MH",
+    "Currency": ""
+}, {
+    "Name": "Martinique",
+    "PhoneCode": "+596",
+    "Code": "MQ",
+    "Currency": ""
+}, {
+    "Name": "Mauritania",
+    "PhoneCode": "+222",
+    "Code": "MR",
+    "Currency": ""
+}, {
+    "Name": "Mauritius",
+    "PhoneCode": "+230",
+    "Code": "MU",
+    "Currency": ""
+}, {
+    "Name": "Mayotte",
+    "PhoneCode": "+262",
+    "Code": "YT",
+    "Currency": ""
+}, {
+    "Name": "Mexico",
+    "PhoneCode": "+52",
+    "Code": "MX",
+    "Currency": ""
+}, {
+    "Name": "Monaco",
+    "PhoneCode": "+377",
+    "Code": "MC",
+    "Currency": ""
+}, {
+    "Name": "Mongolia",
+    "PhoneCode": "+976",
+    "Code": "MN",
+    "Currency": ""
+}, {
+    "Name": "Montenegro",
+    "PhoneCode": "+382",
+    "Code": "ME",
+    "Currency": ""
+}, {
+    "Name": "Montserrat",
+    "PhoneCode": "+1664",
+    "Code": "MS",
+    "Currency": ""
+}, {
+    "Name": "Morocco",
+    "PhoneCode": "+212",
+    "Code": "MA",
+    "Currency": ""
+}, {
+    "Name": "Myanmar",
+    "PhoneCode": "+95",
+    "Code": "MM",
+    "Currency": ""
+}, {
+    "Name": "Namibia",
+    "PhoneCode": "+264",
+    "Code": "NA",
+    "Currency": ""
+}, {
+    "Name": "Nauru",
+    "PhoneCode": "+674",
+    "Code": "NR",
+    "Currency": ""
+}, {
+    "Name": "Nepal",
+    "PhoneCode": "+977",
+    "Code": "NP",
+    "Currency": ""
+}, {
+    "Name": "Netherlands",
+    "PhoneCode": "+31",
+    "Code": "NL",
+    "Currency": ""
+}, {
+    "Name": "Netherlands Antilles",
+    "PhoneCode": "+599",
+    "Code": "AN",
+    "Currency": ""
+}, {
+    "Name": "New Caledonia",
+    "PhoneCode": "+687",
+    "Code": "NC",
+    "Currency": ""
+}, {
+    "Name": "New Zealand",
+    "PhoneCode": "+64",
+    "Code": "NZ",
+    "Currency": ""
+}, {
+    "Name": "Nicaragua",
+    "PhoneCode": "+505",
+    "Code": "NI",
+    "Currency": ""
+}, {
+    "Name": "Niger",
+    "PhoneCode": "+227",
+    "Code": "NE",
+    "Currency": ""
+}, {
+    "Name": "Nigeria",
+    "PhoneCode": "+234",
+    "Code": "NG",
+    "Currency": ""
+}, {
+    "Name": "Niue",
+    "PhoneCode": "+683",
+    "Code": "NU",
+    "Currency": ""
+}, {
+    "Name": "Norfolk Island",
+    "PhoneCode": "+672",
+    "Code": "NF",
+    "Currency": ""
+}, {
+    "Name": "Northern Mariana Islands",
+    "PhoneCode": "+1 670",
+    "Code": "MP",
+    "Currency": ""
+}, {
+    "Name": "Norway",
+    "PhoneCode": "+47",
+    "Code": "NO",
+    "Currency": ""
+}, {
+    "Name": "Oman",
+    "PhoneCode": "+968",
+    "Code": "OM",
+    "Currency": ""
+}, {
+    "Name": "Pakistan",
+    "PhoneCode": "+92",
+    "Code": "PK",
+    "Currency": ""
+}, {
+    "Name": "Palau",
+    "PhoneCode": "+680",
+    "Code": "PW",
+    "Currency": ""
+}, {
+    "Name": "Panama",
+    "PhoneCode": "+507",
+    "Code": "PA",
+    "Currency": ""
+}, {
+    "Name": "Papua New Guinea",
+    "PhoneCode": "+675",
+    "Code": "PG",
+    "Currency": ""
+}, {
+    "Name": "Paraguay",
+    "PhoneCode": "+595",
+    "Code": "PY",
+    "Currency": ""
+}, {
+    "Name": "Peru",
+    "PhoneCode": "+51",
+    "Code": "PE",
+    "Currency": ""
+}, {
+    "Name": "Philippines",
+    "PhoneCode": "+63",
+    "Code": "PH",
+    "Currency": ""
+}, {
+    "Name": "Poland",
+    "PhoneCode": "+48",
+    "Code": "PL",
+    "Currency": ""
+}, {
+    "Name": "Portugal",
+    "PhoneCode": "+351",
+    "Code": "PT",
+    "Currency": ""
+}, {
+    "Name": "Puerto Rico",
+    "PhoneCode": "+1 939",
+    "Code": "PR",
+    "Currency": ""
+}, {
+    "Name": "Qatar",
+    "PhoneCode": "+974",
+    "Code": "QA",
+    "Currency": ""
+}, {
+    "Name": "Romania",
+    "PhoneCode": "+40",
+    "Code": "RO",
+    "Currency": ""
+}, {
+    "Name": "Rwanda",
+    "PhoneCode": "+250",
+    "Code": "RW",
+    "Currency": ""
+}, {
+    "Name": "Samoa",
+    "PhoneCode": "+685",
+    "Code": "WS",
+    "Currency": ""
+}, {
+    "Name": "San Marino",
+    "PhoneCode": "+378",
+    "Code": "SM",
+    "Currency": ""
+}, {
+    "Name": "Saudi Arabia",
+    "PhoneCode": "+966",
+    "Code": "SA",
+    "Currency": ""
+}, {
+    "Name": "Senegal",
+    "PhoneCode": "+221",
+    "Code": "SN",
+    "Currency": ""
+}, {
+    "Name": "Serbia",
+    "PhoneCode": "+381",
+    "Code": "RS",
+    "Currency": ""
+}, {
+    "Name": "Seychelles",
+    "PhoneCode": "+248",
+    "Code": "SC",
+    "Currency": ""
+}, {
+    "Name": "Sierra Leone",
+    "PhoneCode": "+232",
+    "Code": "SL",
+    "Currency": ""
+}, {
+    "Name": "Singapore",
+    "PhoneCode": "+65",
+    "Code": "SG",
+    "Currency": ""
+}, {
+    "Name": "Slovakia",
+    "PhoneCode": "+421",
+    "Code": "SK",
+    "Currency": ""
+}, {
+    "Name": "Slovenia",
+    "PhoneCode": "+386",
+    "Code": "SI",
+    "Currency": ""
+}, {
+    "Name": "Solomon Islands",
+    "PhoneCode": "+677",
+    "Code": "SB",
+    "Currency": ""
+}, {
+    "Name": "South Africa",
+    "PhoneCode": "+27",
+    "Code": "ZA",
+    "Currency": ""
+}, {
+    "Name": "South Georgia and the South Sandwich Islands",
+    "PhoneCode": "+500",
+    "Code": "GS",
+    "Currency": ""
+}, {
+    "Name": "Spain",
+    "PhoneCode": "+34",
+    "Code": "ES",
+    "Currency": ""
+}, {
+    "Name": "Sri Lanka",
+    "PhoneCode": "+94",
+    "Code": "LK",
+    "Currency": ""
+}, {
+    "Name": "Sudan",
+    "PhoneCode": "+249",
+    "Code": "SD",
+    "Currency": ""
+}, {
+    "Name": "SuriName",
+    "PhoneCode": "+597",
+    "Code": "SR",
+    "Currency": ""
+}, {
+    "Name": "Swaziland",
+    "PhoneCode": "+268",
+    "Code": "SZ",
+    "Currency": ""
+}, {
+    "Name": "Sweden",
+    "PhoneCode": "+46",
+    "Code": "SE",
+    "Currency": ""
+}, {
+    "Name": "Switzerland",
+    "PhoneCode": "+41",
+    "Code": "CH",
+    "Currency": ""
+}, {
+    "Name": "Tajikistan",
+    "PhoneCode": "+992",
+    "Code": "TJ",
+    "Currency": ""
+}, {
+    "Name": "Thailand",
+    "PhoneCode": "+66",
+    "Code": "TH",
+    "Currency": ""
+}, {
+    "Name": "Togo",
+    "PhoneCode": "+228",
+    "Code": "TG",
+    "Currency": ""
+}, {
+    "Name": "Tokelau",
+    "PhoneCode": "+690",
+    "Code": "TK",
+    "Currency": ""
+}, {
+    "Name": "Tonga",
+    "PhoneCode": "+676",
+    "Code": "TO",
+    "Currency": ""
+}, {
+    "Name": "Trinidad and Tobago",
+    "PhoneCode": "+1 868",
+    "Code": "TT",
+    "Currency": ""
+}, {
+    "Name": "Tunisia",
+    "PhoneCode": "+216",
+    "Code": "TN",
+    "Currency": ""
+}, {
+    "Name": "Turkey",
+    "PhoneCode": "+90",
+    "Code": "TR",
+    "Currency": ""
+}, {
+    "Name": "Turkmenistan",
+    "PhoneCode": "+993",
+    "Code": "TM",
+    "Currency": ""
+}, {
+    "Name": "Turks and Caicos Islands",
+    "PhoneCode": "+1 649",
+    "Code": "TC",
+    "Currency": ""
+}, {
+    "Name": "Tuvalu",
+    "PhoneCode": "+688",
+    "Code": "TV",
+    "Currency": ""
+}, {
+    "Name": "Uganda",
+    "PhoneCode": "+256",
+    "Code": "UG",
+    "Currency": ""
+}, {
+    "Name": "Ukraine",
+    "PhoneCode": "+380",
+    "Code": "UA",
+    "Currency": ""
+}, {
+    "Name": "United Arab Emirates",
+    "PhoneCode": "+971",
+    "Code": "AE",
+    "Currency": ""
+}, {
+    "Name": "United Kingdom",
+    "PhoneCode": "+44",
+    "Code": "GB",
+    "Currency": ""
+}, {
+    "Name": "United States",
+    "PhoneCode": "+1",
+    "Code": "US",
+    "Currency": ""
+}, {
+    "Name": "Uruguay",
+    "PhoneCode": "+598",
+    "Code": "UY",
+    "Currency": ""
+}, {
+    "Name": "Uzbekistan",
+    "PhoneCode": "+998",
+    "Code": "UZ",
+    "Currency": ""
+}, {
+    "Name": "Vanuatu",
+    "PhoneCode": "+678",
+    "Code": "VU",
+    "Currency": ""
+}, {
+    "Name": "Wallis and Futuna",
+    "PhoneCode": "+681",
+    "Code": "WF",
+    "Currency": ""
+}, {
+    "Name": "Yemen",
+    "PhoneCode": "+967",
+    "Code": "YE",
+    "Currency": ""
+}, {
+    "Name": "Zambia",
+    "PhoneCode": "+260",
+    "Code": "ZM",
+    "Currency": ""
+}, {
+    "Name": "Zimbabwe",
+    "PhoneCode": "+263",
+    "Code": "ZW",
+    "Currency": ""
+}, {
+    "Name": "land Islands",
+    "PhoneCode": "",
+    "Code": "AX",
+    "Currency": ""
+}, {
+    "Name": "Antarctica",
+    "PhoneCode": "+672",
+    "Code": "AQ",
+    "Currency": ""
+}, {
+    "Name": "Bolivia, Plurinational State of",
+    "PhoneCode": "+591",
+    "Code": "BO",
+    "Currency": ""
+}, {
+    "Name": "Brunei Darussalam",
+    "PhoneCode": "+673",
+    "Code": "BN",
+    "Currency": ""
+}, {
+    "Name": "Cocos (Keeling) Islands",
+    "PhoneCode": "+61",
+    "Code": "CC",
+    "Currency": ""
+}, {
+    "Name": "Congo, The Democratic Republic of the",
+    "PhoneCode": "+243",
+    "Code": "CD",
+    "Currency": ""
+}, {
+    "Name": "Cote d'Ivoire",
+    "PhoneCode": "+225",
+    "Code": "CI",
+    "Currency": ""
+}, {
+    "Name": "Falkland Islands (Malvinas)",
+    "PhoneCode": "+500",
+    "Code": "FK",
+    "Currency": ""
+}, {
+    "Name": "Guernsey",
+    "PhoneCode": "+44",
+    "Code": "GG",
+    "Currency": ""
+}, {
+    "Name": "Holy See (Vatican City State)",
+    "PhoneCode": "+379",
+    "Code": "VA",
+    "Currency": ""
+}, {
+    "Name": "Hong Kong",
+    "PhoneCode": "+852",
+    "Code": "HK",
+    "Currency": ""
+}, {
+    "Name": "Iran, Islamic Republic of",
+    "PhoneCode": "+98",
+    "Code": "IR",
+    "Currency": ""
+}, {
+    "Name": "Isle of Man",
+    "PhoneCode": "+44",
+    "Code": "IM",
+    "Currency": ""
+}, {
+    "Name": "Jersey",
+    "PhoneCode": "+44",
+    "Code": "JE",
+    "Currency": ""
+}, {
+    "Name": "Korea, Democratic People's Republic of",
+    "PhoneCode": "+850",
+    "Code": "KP",
+    "Currency": ""
+}, {
+    "Name": "Korea, Republic of",
+    "PhoneCode": "+82",
+    "Code": "KR",
+    "Currency": ""
+}, {
+    "Name": "Lao People's Democratic Republic",
+    "PhoneCode": "+856",
+    "Code": "LA",
+    "Currency": ""
+}, {
+    "Name": "Libyan Arab Jamahiriya",
+    "PhoneCode": "+218",
+    "Code": "LY",
+    "Currency": ""
+}, {
+    "Name": "Macao",
+    "PhoneCode": "+853",
+    "Code": "MO",
+    "Currency": ""
+}, {
+    "Name": "Macedonia, The Former Yugoslav Republic of",
+    "PhoneCode": "+389",
+    "Code": "MK",
+    "Currency": ""
+}, {
+    "Name": "Micronesia, Federated States of",
+    "PhoneCode": "+691",
+    "Code": "FM",
+    "Currency": ""
+}, {
+    "Name": "Moldova, Republic of",
+    "PhoneCode": "+373",
+    "Code": "MD",
+    "Currency": ""
+}, {
+    "Name": "Mozambique",
+    "PhoneCode": "+258",
+    "Code": "MZ",
+    "Currency": ""
+}, {
+    "Name": "Palestinian Territory, Occupied",
+    "PhoneCode": "+970",
+    "Code": "PS",
+    "Currency": ""
+}, {
+    "Name": "Pitcairn",
+    "PhoneCode": "+872",
+    "Code": "PN",
+    "Currency": ""
+}, {
+    "Name": "Réunion",
+    "PhoneCode": "+262",
+    "Code": "RE",
+    "Currency": ""
+}, {
+    "Name": "Russia",
+    "PhoneCode": "+7",
+    "Code": "RU",
+    "Currency": ""
+}, {
+    "Name": "Saint Barthélemy",
+    "PhoneCode": "+590",
+    "Code": "BL",
+    "Currency": ""
+}, {
+    "Name": "Saint Helena, Ascension and Tristan Da Cunha",
+    "PhoneCode": "+290",
+    "Code": "SH",
+    "Currency": ""
+}, {
+    "Name": "Saint Kitts and Nevis",
+    "PhoneCode": "+1 869",
+    "Code": "KN",
+    "Currency": ""
+}, {
+    "Name": "Saint Lucia",
+    "PhoneCode": "+1 758",
+    "Code": "LC",
+    "Currency": ""
+}, {
+    "Name": "Saint Martin",
+    "PhoneCode": "+590",
+    "Code": "MF",
+    "Currency": ""
+}, {
+    "Name": "Saint Pierre and Miquelon",
+    "PhoneCode": "+508",
+    "Code": "PM",
+    "Currency": ""
+}, {
+    "Name": "Saint Vincent and the Grenadines",
+    "PhoneCode": "+1 784",
+    "Code": "VC",
+    "Currency": ""
+}, {
+    "Name": "Sao Tome and Principe",
+    "PhoneCode": "+239",
+    "Code": "ST",
+    "Currency": ""
+}, {
+    "Name": "Somalia",
+    "PhoneCode": "+252",
+    "Code": "SO",
+    "Currency": ""
+}, {
+    "Name": "Svalbard and Jan Mayen",
+    "PhoneCode": "+47",
+    "Code": "SJ",
+    "Currency": ""
+}, {
+    "Name": "Syrian Arab Republic",
+    "PhoneCode": "+963",
+    "Code": "SY",
+    "Currency": ""
+}, {
+    "Name": "Taiwan, Province of China",
+    "PhoneCode": "+886",
+    "Code": "TW",
+    "Currency": ""
+}, {
+    "Name": "Tanzania, United Republic of",
+    "PhoneCode": "+255",
+    "Code": "TZ",
+    "Currency": ""
+}, {
+    "Name": "Timor-Leste",
+    "PhoneCode": "+670",
+    "Code": "TL",
+    "Currency": ""
+}, {
+    "Name": "Venezuela, Bolivarian Republic of",
+    "PhoneCode": "+58",
+    "Code": "VE",
+    "Currency": ""
+}, {
+    "Name": "Viet Nam",
+    "PhoneCode": "+84",
+    "Code": "VN",
+    "Currency": ""
+}, {
+    "Name": "Virgin Islands, British",
+    "PhoneCode": "+1 284",
+    "Code": "VG",
+    "Currency": ""
+}, {
+    "Name": "Virgin Islands, U.S.",
+    "PhoneCode": "+1 340",
+    "Code": "VI",
+    "Currency": ""
+}]

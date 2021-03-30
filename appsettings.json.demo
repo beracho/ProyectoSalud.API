@@ -1,0 +1,68 @@
+{
+  "AppSettings": {
+    "Token": "Super secret key"
+  },
+  "MailSettings": {
+    "Mail": "<fromemail>",
+    "DisplayName": "<displayname>",
+    "Password": "<yourpasswordhere>",
+    "Host": "smtp.gmail.com",
+    "Port": 587
+  },
+  "HostSettings": {
+    "WebSiteUrl": "http://localhost:3000"
+  },
+  "CloudinarySettings": {
+    "CloudName": "dsgaf5zoj",
+    "ApiKey": "531249925935681",
+    "ApiSecret": "dQay6GtwgkgaIeY1fnbMbhmOPhI"
+  },
+  "DatabaseParams": {
+    "SeedFakeData": "true"
+  },
+  "ConnectionStrings": {
+    "PgAdminConnection": "Server=localhost;Port=5432;Database=SistemaSaludDB;User Id=postgres;Password=password;",
+    "SqlServerConnection": "server=localhost\\SQLEXPRESS;database=SistemaSaludDB;Trusted_Connection=true"
+  },
+  "MailLogger": "Logs/Smtp/Smtp.log",
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "http://localhost:5000"
+      },
+      "HttpsInlineCertFile": {
+        "Url": "https://localhost:5001",
+        "Certificate": {
+          "Path": "/etc/ssl/certs/sistemaSalud.com.pfx",
+          "Password": "certificatePassword"
+        }
+      },
+      "HttpsInlineCertAndKeyFile": {
+        "Url": "https://localhost:5002",
+        "Certificate": {
+          "Path": "/etc/ssl/certs/sistemaSalud_com.crt",
+          "KeyPath": "/etc/ssl/certs/sistemaSalud.com.key",
+          "Password": "certificatePassword"
+        }
+      },
+      "HttpsDefaultCert": {
+        "Url": "https://localhost:5003"
+      }
+    },
+    "Certificates": {
+      "Default": {
+        "Path": "/etc/ssl/certs/sistemaSalud.com.pfx",
+        "Password": "certificatePassword"
+      }
+    }
+  },
+  "CertificateRoute" : "https://res.cloudinary.com/dzxmzxvbr/image/upload/v1615498189/certificadocn_logos_1_-06_kvt58g.jpg"
+}

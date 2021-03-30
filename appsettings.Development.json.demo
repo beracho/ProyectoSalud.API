@@ -1,0 +1,35 @@
+{
+  "AppSettings": {
+    "Token": "Super secret key"
+  },
+  "MailSettings": {
+    "Mail": "<fromemail>",
+    "DisplayName": "<displayname>",
+    "Password": "<yourpasswordhere>",
+    "Host": "smtp.gmail.com",
+    "Port": 587
+  },
+  "HostSettings": {
+    "WebSiteUrl": "http://localhost:3000"
+  },
+  "CloudinarySettings": {
+    "CloudName": "dzxmzxvbr",
+    "ApiKey": "573417432649841",
+    "ApiSecret": "SKCkvK6ag4TXmSJbR4MM16RU__I"
+  },
+  "DatabaseParams": {
+    "SeedFakeData": "true"
+  },
+  "ConnectionStrings": {
+    "PgAdminConnection": "Server=localhost;Port=5432;Database=databaseName;User Id=postgres;Password=password;",
+    "SqlServerConnection": "server=localhost\\SQLEXPRESS;database=databaseName;Trusted_Connection=true"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}

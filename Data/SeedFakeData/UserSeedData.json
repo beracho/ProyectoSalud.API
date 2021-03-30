@@ -1,0 +1,67 @@
+[{
+    "Username": "wen",
+    "Password": "wenwen",
+    "Email": "wen@wen.com",
+    "Name": "Wendy",
+    "LastName": "Samira",
+    "PhotoUrl": "https://www.pinclipart.com/picdir/middle/8-81886_big-image-imagen-de-usuario-mujer-clipart.png",
+    "TelephoneId": 1,
+    "LocationId": 1,
+    "PreferenceId": 4,
+    "ExternalLoginId": 1
+}, {
+    "Username": "dami",
+    "Password": "dami",
+    "Email": "dami@dami.com",
+    "Name": "Damian",
+    "LastName": "Cortez",
+    "PhotoUrl": "https://i.blogs.es/2d5264/facebook-image/450_1000.jpg",
+    "TelephoneId": 1,
+    "LocationId": 1,
+    "PreferenceId": 3,
+    "ExternalLoginId": 1
+}, {
+    "Username": "zoe",
+    "Password": "zoezoe",
+    "Email": "zoe@zoe.com",
+    "Name": "Zoely",
+    "LastName": "Cruz",
+    "PhotoUrl": "https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+    "TelephoneId": 1,
+    "LocationId": 1,
+    "PreferenceId": 2,
+    "ExternalLoginId": 1
+}, {
+    "Username": "dan",
+    "Password": "dandan",
+    "Email": "dan@dan.com",
+    "Name": "Dante",
+    "LastName": "Vargas",
+    "PhotoUrl": "https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png",
+    "TelephoneId": 1,
+    "LocationId": 1,
+    "PreferenceId": 1,
+    "ExternalLoginId": 1
+}, {
+    "Username": "adminp",
+    "Password": "adminp",
+    "Email": "adminp@adminp.adminp",
+    "Name": "Admin",
+    "LastName": "Prueba",
+    "PhotoUrl": "https://lh3.googleusercontent.com/a-/AOh14GiZvU-l_ZFKsnXS0mlkiDzFxLHNX5ag7EKp7jw3=s96-c",
+    "TelephoneId": 1,
+    "LocationId": 1,
+    "PreferenceId": 2,
+    "ExternalLoginId": 1
+}, {
+    "Username": "tutorp",
+    "Password": "tutorp",
+    "Email": "tutorp@tutorp.com",
+    "Name": "Tutor",
+    "LastName": "Prurba",
+    "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+    "TelephoneId": 1,
+    "LocationId": 1,
+    "PreferenceId": 1,
+    "ExternalLoginId": 1
+}]
