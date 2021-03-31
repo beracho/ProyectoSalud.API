@@ -1,0 +1,13 @@
+[{
+    "Name": "admin",
+    "Active": "true",
+    "Default": "false"
+}, {
+    "Name": "doctor",
+    "Active": "true",
+    "Default": "false"
+}, {
+    "Name": "nurse",
+    "Active": "true",
+    "Default": "true"
+}]

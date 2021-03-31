@@ -22,26 +22,50 @@ namespace ProyectoSalud.API.Data
 
         public void SeedAll()
         {
-            // if (_repo.GetCountries() == 0)
-            // {
-            //     // SeedCountries();
-            //     if (_config.GetSection("DatabaseParams:SeedFakeData").Value == "true")
-            //     {
-            //         SeedFakeData();
-            //     }
-            // }
+            if (_repo.GetCountries() == 0)
+            {
+                SeedCountries();
+                SeedCities();
+                SeedRols();
+                // if (_config.GetSection("DatabaseParams:SeedFakeData").Value == "true")
+                // {
+                //     SeedFakeData();
+                // }
+            }
         }
 
-        // public void SeedCountries()
-        // {
-        //     var countryData = System.IO.File.ReadAllText("Data/SeedData/CountrySeedData.json");
-        //     var countries = JsonConvert.DeserializeObject<List<Country>>(countryData);
-        //     foreach (var country in countries)
-        //     {
-        //         _context.Countries.Add(country);
-        //     }
-        //     _context.SaveChanges();
-        // }
+        public void SeedCountries()
+        {
+            var countryData = System.IO.File.ReadAllText("Data/SeedData/CountrySeedData.json");
+            var countries = JsonConvert.DeserializeObject<List<Country>>(countryData);
+            foreach (var country in countries)
+            {
+                _context.Countries.Add(country);
+            }
+            _context.SaveChanges();
+        }
+
+        public void SeedCities()
+        {
+            var cityData = System.IO.File.ReadAllText("Data/SeedData/CitySeedData.json");
+            var cities = JsonConvert.DeserializeObject<List<City>>(cityData);
+            foreach (var city in cities)
+            {
+                _context.Cities.Add(city);
+            }
+            _context.SaveChanges();
+        }
+
+        public void SeedRols()
+        {
+            var rolData = System.IO.File.ReadAllText("Data/SeedData/RolSeedData.json");
+            var rols = JsonConvert.DeserializeObject<List<Rol>>(rolData);
+            foreach (var rol in rols)
+            {
+                _context.Rols.Add(rol);
+            }
+            _context.SaveChanges();
+        }
 
         public void SeedFakeData()
         {
