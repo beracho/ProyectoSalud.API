@@ -82,15 +82,15 @@ namespace ProyectoSalud.API
             services.AddTransient<Seed>();
             services.AddDataProtection().DisableAutomaticKeyGeneration();
             // Conexion with Sql Server 
-            services.AddDbContext<DataContext>(x =>
-            {
-                x.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection"));
-            });
             // services.AddDbContext<DataContext>(x =>
             // {
-            //     // x.UseLazyLoadingProxies();
-            //     x.UseNpgsql(Configuration.GetConnectionString("PgAdminConnection"));
+            //     x.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection"));
             // });
+            services.AddDbContext<DataContext>(x =>
+            {
+                // x.UseLazyLoadingProxies();
+                x.UseNpgsql(Configuration.GetConnectionString("PgAdminConnection"));
+            });
             services.AddControllers();
         }
 
