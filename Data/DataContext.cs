@@ -18,6 +18,10 @@ namespace ProyectoSalud.API.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Location>()
+                .HasOne(l => l.CountryAddress)
+                .WithMany(c => c.LocationAddress)
+                .OnDelete(DeleteBehavior.Restrict);
             // builder.Entity<Price>()
             //     .HasOne(p => p.Course)
             //     .WithMany(c => c.Prices)
