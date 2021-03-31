@@ -45,10 +45,10 @@ namespace ProyectoSalud.API.Controllers
             {
                 userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
-                string alreadyExists = await _repo.UserExists(userForRegisterDto);
-                if (alreadyExists != "")
+                var userFound = await _repo.UserExists(userForRegisterDto);
+                if (userFound != null)
                 {
-                    return BadRequest(alreadyExists);
+                    return BadRequest("already_exists");
                 }
 
                 var userToCreate = _mapper.Map<User>(userForRegisterDto);
@@ -67,6 +67,8 @@ namespace ProyectoSalud.API.Controllers
                 {
                     RegisterEmail request = new RegisterEmail();
                     request.ToEmail = userToReturn.Email;
+                    request.UserName = userToReturn.Username;
+                    request.FirstName = userToReturn.FirstName;
                     request.UserName = userToReturn.Username;
 
                     await _mailService.SendWelcomeEmailAsync(request);
@@ -119,8 +121,8 @@ namespace ProyectoSalud.API.Controllers
             {
                 var userToVerifyExist = _mapper.Map<UserForRegisterDto>(userForRecoveryDto);
                 var user = _mapper.Map<User>(userToVerifyExist);
-                string alreadyExists = await _repo.UserExists(userToVerifyExist);
-                if (alreadyExists == "")
+                var userFound = await _repo.UserExists(userToVerifyExist);
+                if (userFound == null)
                 {
                     return BadRequest("user_does_not_exist");
                 }
@@ -151,8 +153,8 @@ namespace ProyectoSalud.API.Controllers
             try
             {
                 var userToVerifyExist = _mapper.Map<UserForRegisterDto>(userForRecoveryVerifyDto);
-                string alreadyExists = await _repo.UserExists(userToVerifyExist);
-                if (alreadyExists == "")
+                var userFound = await _repo.UserExists(userToVerifyExist);
+                if (userFound == null)
                 {
                     return BadRequest("user_does_not_exist");
                 }

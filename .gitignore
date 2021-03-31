@@ -10,3 +10,5 @@
 ProyectoSalud.API.csproj
 .vs
 /packages
+tasks.json
+launch.json

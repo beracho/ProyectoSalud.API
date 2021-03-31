@@ -11,7 +11,7 @@ namespace ProyectoSalud.API.Data
         Task<User> Register(User user, string password);
         Task<User> Login(string username, string password);
         Task<User> GetUser(int userID);
-        Task<string> UserExists(UserForRegisterDto userForRegisterDto);
+        Task<User> UserExists(UserForRegisterDto userForRegisterDto);
         Task<IEnumerable<UserRol>> GetRolsPerUser(int userId);
         string GenerateVerificationKey();
         User CompleteInfoToConfirmVerify(UserForRecoveryVerifyDto userForRecoveryVerifyDto, User user);

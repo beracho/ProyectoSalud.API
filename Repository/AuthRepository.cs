@@ -102,18 +102,20 @@ namespace ProyectoSalud.API.Data
             }
         }
 
-        public async Task<string> UserExists(UserForRegisterDto userForRegisterDto)
+        public async Task<User> UserExists(UserForRegisterDto userForRegisterDto)
         {
-            if (await _context.Users.AnyAsync(x => x.Username == userForRegisterDto.Username))
+            var userFound = await _context.Users.FirstOrDefaultAsync(x => x.Username == userForRegisterDto.Username);
+            if (userFound != null)
             {
-                return "username_exists";
+                return userFound;
             }
-            if (await _context.Users.AnyAsync(x => x.Email == userForRegisterDto.Email))
+            userFound = await _context.Users.FirstOrDefaultAsync(x => x.Email == userForRegisterDto.Email);
+            if (userFound != null)
             {
-                return "username_exists";
+                return userFound;
             }
 
-            return "";
+            return null;
         }
 
         public async Task<Location> CreateLocation()
