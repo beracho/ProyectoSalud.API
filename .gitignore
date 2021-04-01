@@ -7,7 +7,7 @@
 /appsettings.json
 /appsettings.Development.json
 .vs/ProyectoSalud.API/v15/.suo
-ProyectoSalud.API.csproj
+# ProyectoSalud.API.csproj
 .vs
 /packages
 tasks.json
