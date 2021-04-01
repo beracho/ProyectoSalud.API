@@ -11,12 +11,12 @@ namespace ProyectoSalud.API.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<User, UserForDetailedDto>()
-                // .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url))
-                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()))
-                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Name));
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Person.DateOfBirth.CalculateAge()))
+                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Person.Name))
+                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Person.LastName));
             CreateMap<UserForUpdateDto, User>();
-            CreateMap<UserForRegisterDto, User>()
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.FirstName));
+            CreateMap<UserForRegisterDto, User>();
+                // .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.FirstName));
             CreateMap<UserForRecoveryDto, UserForRegisterDto>()
                 .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.UsernameOrEmail))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.UsernameOrEmail));
@@ -24,7 +24,6 @@ namespace ProyectoSalud.API.Helpers
             CreateMap<UserForRecoveryDto, User>();
             CreateMap<Rol, RolsToListDto>();
             CreateMap<UserForUpdateDto, UserForRegisterDto>();
-            // .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.));
             CreateMap<UserForUpdateDto, Telephone>()
                 .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.Country))
                 .ForMember(dest => dest.CountryCode, opt => opt.MapFrom(src => src.CountryCode))
@@ -38,13 +37,11 @@ namespace ProyectoSalud.API.Helpers
                 .ForMember(dest => dest.PostalCode, opt => opt.MapFrom(src => src.PostalCode));
             CreateMap<UserForUpdateDto, User>()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
-                .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
-                .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth))
+                // .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                // .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
+                // .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
+                // .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth))
                 .ForMember(dest => dest.Nickname, opt => opt.MapFrom(src => src.Nickname));
-            CreateMap<User, UserForEnrollDto>()
-            .ForMember(dest => dest.Telephone, opt => opt.MapFrom(src => src.Telephone.NationalNumber));
         }
     }
 }

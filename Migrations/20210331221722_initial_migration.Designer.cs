@@ -231,9 +231,6 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("text");
 
-                    b.Property<bool>("IsExternal")
-                        .HasColumnType("boolean");
-
                     b.Property<DateTime>("LastActive")
                         .HasColumnType("timestamp without time zone");
 

@@ -151,7 +151,6 @@ namespace ProyectoSalud.API.Migrations
                     VerifiedEmail = table.Column<bool>(nullable: false),
                     VerifiedEmailKey = table.Column<string>(nullable: true),
                     VerifyEmailDate = table.Column<DateTime>(nullable: false),
-                    IsExternal = table.Column<bool>(nullable: false),
                     LocationId = table.Column<int>(nullable: false),
                     TelephoneId = table.Column<int>(nullable: false)
                 },
