@@ -14,8 +14,6 @@ namespace ProyectoSalud.API.Data
         Task<PagedList<User>> GetUsers(UserParams userParams);
         Task<User> GetUser(int id);
         Task<User> GetUser(string usernameOrEmail);
-        Task<User> UpdateUser(User user);
-        Task<User> UpdateUser(User user, Location location, Telephone telephone);
         Task<Photo> GetPhoto(int id);
         Task<Photo> GetMainPhotoForUser(int userId);
         int GetCountries();

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ProyectoSalud.API.Dtos;
 using ProyectoSalud.API.Models;
-using ProyectoSalud.API.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -57,30 +56,36 @@ namespace ProyectoSalud.API.Data
             }
         }
 
-        public async Task<User> Register(User user, string password)
+        public async Task<User> Register(UserForRegisterDto user)
         {
-            user.Username = user.Username.Trim();
-            password = password.Trim();
             using (var transaction = _context.Database.BeginTransaction())
             {
                 try
                 {
-                    var createdLocation = await CreateLocation();
-                    user.LocationId = createdLocation.Id;
-                    var createdTelephone = await CreateTelephone();
-                    user.TelephoneId = createdTelephone.Id;
-
-                    user.IsExternal = false;
-
+                    var password = user.Password.Trim();
+                    var createdUser = new User()
+                    {
+                        Username = user.Username.Trim(),
+                        Email = user.Email
+                    };
+                    var person = new Person()
+                    {
+                        Name = user.FirstName,
+                        LastName = user.LastName
+                    };
+                    var createdPerson = await CreatePerson(person);
+                    createdUser.PersonId = createdPerson.Id;
 
                     byte[] passwordHash, passwordSalt;
                     CreatePasswordHash(password, out passwordHash, out passwordSalt);
-                    user.PasswordHash = passwordHash;
-                    user.PasswordSalt = passwordSalt;
+                    createdUser.PasswordHash = passwordHash;
+                    createdUser.PasswordSalt = passwordSalt;
 
-                    await _context.Users.AddAsync(user);
+                    await _context.Users.AddAsync(createdUser);
                     await _context.SaveChangesAsync();
                     transaction.Commit();
+
+                    return createdUser;
                 }
                 catch (Exception)
                 {
@@ -89,7 +94,6 @@ namespace ProyectoSalud.API.Data
                     // log ex.Message.lo
                     throw new Exception("registration_failed");
                 }
-                return user;
             }
         }
 
@@ -116,6 +120,19 @@ namespace ProyectoSalud.API.Data
             }
 
             return null;
+        }
+
+        public async Task<Person> CreatePerson(Person person)
+        {
+            var createdLocation = await CreateLocation();
+            person.LocationId = createdLocation.Id;
+            var createdTelephone = await CreateTelephone();
+            person.TelephoneId = createdTelephone.Id;
+
+            await _context.Persons.AddAsync(person);
+            await _context.SaveChangesAsync();
+
+            return person;
         }
 
         public async Task<Location> CreateLocation()
@@ -150,7 +167,9 @@ namespace ProyectoSalud.API.Data
 
         public async Task<User> GetUser(int userId)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == userId);
+            var user = await _context.Users
+            .Include(x => x.Person)
+            .FirstOrDefaultAsync(x => x.Id == userId);
 
             return user;
         }

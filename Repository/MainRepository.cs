@@ -1,16 +1,12 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using ProyectoSalud.API.Helpers;
 using ProyectoSalud.API.Models;
-using ProyectoSalud.API.Smtp;
 using Microsoft.EntityFrameworkCore;
-using ProyectoSalud.API.Dtos;
 using AutoMapper;
 using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
 
 namespace ProyectoSalud.API.Data
 {
@@ -63,7 +59,10 @@ namespace ProyectoSalud.API.Data
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users
+            .Include(u => u.Person)
+            .ThenInclude(p => p.Photos)
+            .FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
@@ -73,43 +72,23 @@ namespace ProyectoSalud.API.Data
             return user;
         }
 
-        public async Task<User> UpdateUser(User user)
-        {
-            _context.Users.Update(user);
-
-            await _context.SaveChangesAsync();
-            return user;
-        }
-
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.Include(p => p.Photos).OrderByDescending(u => u.LastActive).AsQueryable();
+            var users = _context.Users
+            .Include(u => u.Person)
+            .ThenInclude(p => p.Photos)
+            .OrderByDescending(u => u.LastActive)
+            .AsQueryable();
+
             users = users.Where(user => user.Id != userParams.UserId);
-            users = users.Where(user => user.Gender == userParams.Gender);
-            // if (userParams.Likers)
-            // {
-            //     var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
-            //     users = users.Where(u => userLikers.Contains(u.Id));
-            // }
+            users = users.Where(user => user.Person.Gender == userParams.Gender);
 
-            // if (userParams.Likees)
-            // {
-            //     var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
-            //     users = users.Where(u => userLikees.Contains(u.Id));
-            // }
-
-            if (userParams.MinAge != 18 || userParams.MaxAge != 99)
-            {
-                var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
-                var maxDob = DateTime.Today.AddYears(-userParams.MinAge - 1);
-                users = users.Where(user => user.DateOfBirth >= minDob && user.DateOfBirth <= maxDob);
-            }
             if (!string.IsNullOrEmpty(userParams.OrderBy))
             {
                 switch (userParams.OrderBy)
                 {
                     case "created":
-                        users = users.OrderByDescending(u => u.Created);
+                        users = users.OrderByDescending(u => u.CreationDate);
                         break;
                     default:
                         users = users.OrderByDescending(u => u.LastActive);
@@ -141,31 +120,6 @@ namespace ProyectoSalud.API.Data
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
-        }
-
-        public async Task<User> UpdateUser(User user, Location location, Telephone telephone)
-        {
-            using (var transaction = _context.Database.BeginTransaction())
-            {
-                try
-                {
-                    location.Id = user.LocationId;
-                    telephone.Id = user.TelephoneId;
-                    _context.Locations.Update(location);
-                    _context.Telephones.Update(telephone);
-                    _context.Users.Update(user);
-
-                    await _context.SaveChangesAsync();
-                    transaction.Commit();
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    // TODO: Handle failure
-                    throw new Exception("user_update_failed");
-                }
-                return user;
-            }
         }
 
         public async Task<string> ChangeUserRegister(string username)

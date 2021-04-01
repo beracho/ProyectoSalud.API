@@ -30,9 +30,45 @@ namespace ProyectoSalud.API.Repository
             _mailService = mailService;
         }
 
+        public async Task<User> UpdateUser(User user)
+        {
+            _context.Users.Update(user);
+
+            await _context.SaveChangesAsync();
+            return user;
+        }
+
+        public async Task<User> UpdateUser(User user, Location location, Telephone telephone)
+        {
+            using (var transaction = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    location.Id = (int)user.Person.LocationId;
+                    telephone.Id = (int)user.Person.TelephoneId;
+                    _context.Locations.Update(location);
+                    _context.Telephones.Update(telephone);
+                    _context.Users.Update(user);
+
+                    await _context.SaveChangesAsync();
+                    transaction.Commit();
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    // TODO: Handle failure
+                    throw new Exception("user_update_failed");
+                }
+                return user;
+            }
+        }
+
         public async Task<UserForDetailedDto> SearchUserByMail(string email)
         {
-            var user = await _context.Users.Include(u => u.Telephone).FirstOrDefaultAsync(u => u.Email == email);
+            var user = await _context.Users
+            .Include(u => u.Person)
+            .ThenInclude(p => p.Telephone)
+            .FirstOrDefaultAsync(u => u.Email == email);
             var userForEnroll = _mapper.Map<UserForDetailedDto>(user);
 
             return userForEnroll;

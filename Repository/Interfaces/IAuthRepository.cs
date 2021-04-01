@@ -8,7 +8,7 @@ namespace ProyectoSalud.API.Data
 {
     public interface IAuthRepository
     {
-        Task<User> Register(User user, string password);
+        Task<User> Register(UserForRegisterDto user);
         Task<User> Login(string username, string password);
         Task<User> GetUser(int userID);
         Task<User> UserExists(UserForRegisterDto userForRegisterDto);

@@ -22,17 +22,19 @@ namespace ProyectoSalud.API.Controllers
         private readonly IAuthRepository _repo;
         private readonly IMainRepository _mainRepo;
         private readonly IUserRepository _userRepo;
+        private readonly IPersonRepository _personRepo;
         private readonly IConfiguration _config;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
         private readonly ILogger<AuthController> _logger;
 
-        public AuthController(IAuthRepository repo, IMainRepository mainRepo, IUserRepository userRepo, IConfiguration config, IMapper mapper, IMailService mailService, ILogger<AuthController> logger)
+        public AuthController(IAuthRepository repo, IMainRepository mainRepo, IPersonRepository personRepo, IUserRepository userRepo, IConfiguration config, IMapper mapper, IMailService mailService, ILogger<AuthController> logger)
         {
             _mapper = mapper;
             _config = config;
             _repo = repo;
             _userRepo = userRepo;
+            _personRepo = personRepo;
             _mailService = mailService;
             _mainRepo = mainRepo;
             _logger = logger;
@@ -51,15 +53,13 @@ namespace ProyectoSalud.API.Controllers
                     return BadRequest("already_exists");
                 }
 
-                var userToCreate = _mapper.Map<User>(userForRegisterDto);
-
-                var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
+                var createdUser = await _repo.Register(userForRegisterDto);
                 var userToReturn = _mapper.Map<UserForDetailedDto>(createdUser);
 
                 var rolsAssigned = await _repo.AssignRol(createdUser.Id, userForRegisterDto.Rol);
                 var rolsAssignedToList = _mapper.Map<List<RolsToListDto>>(rolsAssigned);
 
-                var tokenDescriptor = _repo.CreateToken(userToCreate, rolsAssigned);
+                var tokenDescriptor = _repo.CreateToken(createdUser, rolsAssigned);
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var token = tokenHandler.CreateToken(tokenDescriptor);
 
@@ -69,7 +69,6 @@ namespace ProyectoSalud.API.Controllers
                     request.ToEmail = userToReturn.Email;
                     request.UserName = userToReturn.Username;
                     request.FirstName = userToReturn.FirstName;
-                    request.UserName = userToReturn.Username;
 
                     await _mailService.SendWelcomeEmailAsync(request);
                 }
@@ -101,7 +100,7 @@ namespace ProyectoSalud.API.Controllers
                 var userFromRepo = await _repo.Login(userForLoginDto.UsernameOrEmail.ToLower(), userForLoginDto.Password);
 
                 if (userFromRepo == null)
-                    return Unauthorized();
+                    return BadRequest("wrong_parameters");
 
                 var authenticationData = await _repo.AuthenticationData(userFromRepo.Id);
 
@@ -132,9 +131,10 @@ namespace ProyectoSalud.API.Controllers
                 userToUpdate.RecoveryKey = _repo.GenerateVerificationKey();
                 userToUpdate.RecoveryDate = DateTime.Now.AddDays(1);
 
-                var updatedUser = await _mainRepo.UpdateUser(userToUpdate);
+                var updatedUser = await _userRepo.UpdateUser(userToUpdate);
+                var person = await _personRepo.GetPerson(updatedUser.Id);
 
-                RecoveryKeyEmail recoveryKeyEmail = new RecoveryKeyEmail(updatedUser.Email, updatedUser.Name, updatedUser.LastName, _mailService.GetVerifyURL(updatedUser.RecoveryKey, "auth/passwordrecovery"));
+                RecoveryKeyEmail recoveryKeyEmail = new RecoveryKeyEmail(updatedUser.Email, person.Name, person.LastName, _mailService.GetVerifyURL(updatedUser.RecoveryKey, "auth/passwordrecovery"));
                 await _mailService.SendRecoveryKeyEmailAsync(recoveryKeyEmail);
 
                 return Ok();
@@ -179,9 +179,10 @@ namespace ProyectoSalud.API.Controllers
 
                 var userToUpdate = _repo.CompleteInfoToConfirmVerify(userForRecoveryVerifyDto, userToVerifyKey);
 
-                var updatedUser = await _mainRepo.UpdateUser(userToUpdate);
+                var updatedUser = await _userRepo.UpdateUser(userToUpdate);
+                var person = await _personRepo.GetPerson(updatedUser.Id);
 
-                RecoveryKeyEmail recoveryKeyEmail = new RecoveryKeyEmail(updatedUser.Email, updatedUser.Name, updatedUser.LastName, "");
+                RecoveryKeyEmail recoveryKeyEmail = new RecoveryKeyEmail(updatedUser.Email, person.Name, person.LastName, "");
                 await _mailService.SendConfirmationRecoveryEmailAsync(recoveryKeyEmail);
 
                 var user = _mapper.Map<UserForDetailedDto>(updatedUser);

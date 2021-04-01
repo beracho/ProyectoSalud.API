@@ -50,6 +50,7 @@ namespace ProyectoSalud.API
             services.AddScoped<IUserValidation, UserValidation>();
             services.AddScoped<IMainRepository, MainRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
             // services.AddScoped<LogUserActivity>();
             services.AddCors(options =>
             {
