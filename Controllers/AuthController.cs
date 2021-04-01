@@ -56,10 +56,10 @@ namespace ProyectoSalud.API.Controllers
                 var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
                 var userToReturn = _mapper.Map<UserForDetailedDto>(createdUser);
 
-                var rolsAssigned = await _repo.GetRolsPerUser(createdUser.Id);
-                IEnumerable<RolsUserForDetailedDto> rolsUserToReturn = _mapper.Map<IEnumerable<RolsUserForDetailedDto>>(rolsAssigned);
+                var rolsAssigned = await _repo.AssignRol(createdUser.Id, userForRegisterDto.Rol);
+                var rolsAssignedToList = _mapper.Map<List<RolsToListDto>>(rolsAssigned);
 
-                var tokenDescriptor = _repo.CreateToken(userToCreate);
+                var tokenDescriptor = _repo.CreateToken(userToCreate, rolsAssigned);
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var token = tokenHandler.CreateToken(tokenDescriptor);
 
@@ -78,11 +78,11 @@ namespace ProyectoSalud.API.Controllers
                     _logger.LogError(ex.Message);
                     return CreatedAtRoute("GetUser",
                         new { controller = "Users", id = createdUser.Id, token = tokenHandler.WriteToken(token) },
-                        new { userToReturn, token = tokenHandler.WriteToken(token), rolsUserToReturn, message = "email_failed" });
+                        new { userToReturn, token = tokenHandler.WriteToken(token), rolsAssignedToList, message = "email_failed" });
                 }
                 return CreatedAtRoute("GetUser",
                     new { controller = "Users", id = createdUser.Id, token = tokenHandler.WriteToken(token) },
-                    new { userToReturn, token = tokenHandler.WriteToken(token), rolsUserToReturn });
+                    new { userToReturn, token = tokenHandler.WriteToken(token), rolsAssignedToList });
 
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace ProyectoSalud.API.Controllers
 
                 if (userFromRepo == null)
                     return Unauthorized();
-                    
+
                 var authenticationData = await _repo.AuthenticationData(userFromRepo.Id);
 
                 return Ok(authenticationData);
@@ -184,20 +184,20 @@ namespace ProyectoSalud.API.Controllers
                 RecoveryKeyEmail recoveryKeyEmail = new RecoveryKeyEmail(updatedUser.Email, updatedUser.Name, updatedUser.LastName, "");
                 await _mailService.SendConfirmationRecoveryEmailAsync(recoveryKeyEmail);
 
-                var tokenDescriptor = _repo.CreateToken(updatedUser);
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-
                 var user = _mapper.Map<UserForDetailedDto>(updatedUser);
 
                 var rolsAssigned = await _repo.GetRolsPerUser(user.Id);
-                IEnumerable<RolsUserForDetailedDto> rolsUserToReturn = _mapper.Map<IEnumerable<RolsUserForDetailedDto>>(rolsAssigned);
+                var rolsAssignedToList = _mapper.Map<List<RolsToListDto>>(rolsAssigned);
+
+                var tokenDescriptor = _repo.CreateToken(updatedUser, rolsAssigned);
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var token = tokenHandler.CreateToken(tokenDescriptor);
 
                 return Ok(new
                 {
                     token = tokenHandler.WriteToken(token),
                     user,
-                    rolsUserToReturn
+                    rolsAssignedToList
                 });
 
             }

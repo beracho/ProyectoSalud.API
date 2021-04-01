@@ -12,12 +12,13 @@ namespace ProyectoSalud.API.Data
         Task<User> Login(string username, string password);
         Task<User> GetUser(int userID);
         Task<User> UserExists(UserForRegisterDto userForRegisterDto);
-        Task<IEnumerable<UserRol>> GetRolsPerUser(int userId);
+        Task<List<Rol>> GetRolsPerUser(int userId);
         string GenerateVerificationKey();
         User CompleteInfoToConfirmVerify(UserForRecoveryVerifyDto userForRecoveryVerifyDto, User user);
         Task<string> ChangePassword(UserForChangePasswordDto userForChangePasswordDto);
-        SecurityTokenDescriptor CreateToken(User userToReturn);
+        SecurityTokenDescriptor CreateToken(User userToReturn, List<Rol> rols);
         Task<User> GetUserByEmail(string email);
+        Task<List<Rol>> AssignRol(int userId, string rolName);
         Task<DataForAuthenticationDto> AuthenticationData(int userId);
     }
 }

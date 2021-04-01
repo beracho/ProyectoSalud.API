@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ProyectoSalud.API.Data;
 
-namespace CapacitaGlobal.API.Migrations
+namespace ProyectoSalud.API.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20210331221722_initial_migration")]

@@ -138,11 +138,11 @@ namespace ProyectoSalud.API.Data
             return Telephone;
         }
 
-        public async Task<IEnumerable<UserRol>> GetRolsPerUser(int userId)
+        public async Task<List<Rol>> GetRolsPerUser(int userId)
         {
             var rols = await _context.UserRols
                 .Where(r => r.UserId == userId)
-                .Include(r => r.Rol)
+                .Select(r => r.Rol)
                 .ToListAsync();
 
             return rols;
@@ -216,7 +216,7 @@ namespace ProyectoSalud.API.Data
             }
         }
 
-        public SecurityTokenDescriptor CreateToken(User userToReturn)
+        public SecurityTokenDescriptor CreateToken(User userToReturn, List<Rol> rols)
         {
             try
             {
@@ -225,14 +225,13 @@ namespace ProyectoSalud.API.Data
                     new Claim (ClaimTypes.Name, userToReturn.Username)
                 };
 
-                // var rols = _institutionRepo.InstitutionsRolsPerUser(userToReturn.Id).Result;
-                // foreach (var rol in rols)
-                // {
-                //     claims = claims.Concat(
-                //         new[] {
-                //             new Claim(ClaimTypes.Role, rol)
-                //         }).ToArray();
-                // }
+                foreach (var rol in rols)
+                {
+                    claims = claims.Concat(
+                        new[] {
+                            new Claim(ClaimTypes.Role, rol.Name)
+                        }).ToArray();
+                }
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8
                     .GetBytes(_config.GetSection("AppSettings:Token").Value));
@@ -263,24 +262,44 @@ namespace ProyectoSalud.API.Data
             return user;
         }
 
+        public async Task<List<Rol>> AssignRol(int userId, string rolName)
+        {
+            var rol = await _context.Rols.FirstOrDefaultAsync(r => r.Name == rolName);
+            if (rol != null)
+            {
+                var userRol = new UserRol()
+                {
+                    RolId = rol.Id,
+                    UserId = userId
+                };
+
+                await _context.UserRols.AddAsync(userRol);
+                await _context.SaveChangesAsync();
+            }
+
+            var rols = await GetRolsPerUser(userId);
+
+            return rols;
+        }
+
         public async Task<DataForAuthenticationDto> AuthenticationData(int userId)
         {
             var userFromRepo = await GetUser(userId);
 
-            var tokenDescriptor = CreateToken(userFromRepo);
+            var rols = await GetRolsPerUser(userId);
+            var rolsAssignedToList = _mapper.Map<List<RolsToListDto>>(rols);
+
+            var tokenDescriptor = CreateToken(userFromRepo, rols);
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             var detailedUser = _mapper.Map<UserForDetailedDto>(userFromRepo);
 
-            var rolsAssigned = await GetRolsPerUser(userFromRepo.Id);
-            var rolsUserToReturn = _mapper.Map<IEnumerable<RolsUserForDetailedDto>>(rolsAssigned);
-
             var dataForAuthenticationDto = new DataForAuthenticationDto()
             {
                 Token = tokenHandler.WriteToken(token),
                 User = detailedUser,
-                Courses = rolsUserToReturn
+                Rols = rolsAssignedToList
             };
 
             return dataForAuthenticationDto;

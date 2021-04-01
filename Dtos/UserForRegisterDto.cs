@@ -15,6 +15,7 @@ namespace ProyectoSalud.API.Dtos
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Rol { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public UserForRegisterDto()

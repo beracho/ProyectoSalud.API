@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace CapacitaGlobal.API.Migrations
+namespace ProyectoSalud.API.Migrations
 {
     public partial class initial_migration : Migration
     {

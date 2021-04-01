@@ -22,6 +22,7 @@ namespace ProyectoSalud.API.Helpers
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.UsernameOrEmail));
             CreateMap<UserForRecoveryVerifyDto, UserForRegisterDto>();
             CreateMap<UserForRecoveryDto, User>();
+            CreateMap<Rol, RolsToListDto>();
             CreateMap<UserForUpdateDto, UserForRegisterDto>();
             // .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.));
             CreateMap<UserForUpdateDto, Telephone>()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ProyectoSalud.API.Models;
 
 namespace ProyectoSalud.API.Dtos
 {
@@ -6,6 +7,6 @@ namespace ProyectoSalud.API.Dtos
     {
         public string Token { get; set; }
         public UserForDetailedDto User { get; set; }
-        public IEnumerable<RolsUserForDetailedDto> Courses { get; set; }
+        public List<RolsToListDto> Rols { get; set; }
     }
 }
