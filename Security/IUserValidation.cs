@@ -7,7 +7,5 @@ namespace ProyectoSalud.API.Security
 {
     public interface IUserValidation
     {
-        Task<bool> ValidateUserRol(int userId, string rolName, int courseId);
-        bool isStudent(IEnumerable<Claim> tokenRols);
     }
 }
