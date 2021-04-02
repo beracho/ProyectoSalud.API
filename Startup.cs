@@ -47,6 +47,7 @@ namespace ProyectoSalud.API
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ISeedRepository, Seed>();
+            services.AddScoped<IConsultingRoomRepository, ConsultingRoomRepository>();
             services.AddScoped<IUserValidation, UserValidation>();
             services.AddScoped<IMainRepository, MainRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
