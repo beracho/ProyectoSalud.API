@@ -27,10 +27,10 @@ namespace ProyectoSalud.API.Data
                 SeedCountries();
                 SeedCities();
                 SeedRols();
-                // if (_config.GetSection("DatabaseParams:SeedFakeData").Value == "true")
-                // {
-                //     SeedFakeData();
-                // }
+                if (_config.GetSection("DatabaseParams:SeedFakeData").Value == "true")
+                {
+                    SeedFakeData();
+                }
             }
         }
 
@@ -70,7 +70,7 @@ namespace ProyectoSalud.API.Data
         public void SeedFakeData()
         {
             // Add fake users and its dependencies
-            // SeedFakeUsers();
+            SeedFakeUsers();
         }
 
         public void SeedFakeUsers()
@@ -85,6 +85,27 @@ namespace ProyectoSalud.API.Data
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
                 _context.Users.Add(user);
+
+                var speciality = user.Speciality;
+                if (speciality != null)
+                {
+                    _context.Specialitiess.Add(speciality);
+                }
+
+                var userRols = user.UserRols;
+                if (userRols != null)
+                {
+                    foreach (var userRol in userRols)
+                    {
+                        _context.UserRols.Add(userRol);
+                    }
+                }
+
+                var person = user.Person;
+                if (person != null)
+                {
+                    _context.Persons.Add(person);
+                }
             }
             _context.SaveChanges();
         }

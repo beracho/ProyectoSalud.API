@@ -322,7 +322,7 @@ namespace ProyectoSalud.API.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
-                    Ci = table.Column<int>(nullable: false),
+                    Ci = table.Column<string>(nullable: true),
                     ExpeditionCi = table.Column<string>(nullable: true),
                     Gender = table.Column<string>(nullable: true),
                     PhotoUrl = table.Column<string>(nullable: true),

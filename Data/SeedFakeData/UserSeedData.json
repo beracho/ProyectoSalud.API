@@ -1,67 +1,409 @@
 [{
-    "Username": "wen",
-    "Password": "wenwen",
-    "Email": "wen@wen.com",
-    "Name": "Wendy",
-    "LastName": "Samira",
-    "PhotoUrl": "https://www.pinclipart.com/picdir/middle/8-81886_big-image-imagen-de-usuario-mujer-clipart.png",
-    "TelephoneId": 1,
-    "LocationId": 1,
-    "PreferenceId": 4,
-    "ExternalLoginId": 1
+    "Username": "admin",
+    "Password": "Developer",
+    "Email": "bhallick0@parallels.com",
+    "Person": {
+        "Name": "Gayle",
+        "LastName": "Ors",
+        "DateOfBirth": "1953-10-17T07:39:00Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "162 403 9179",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 3
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2021-02-10T09:15:55Z",
+    "UpdateDate": "2020-10-20T14:35:03Z"
 }, {
-    "Username": "dami",
-    "Password": "dami",
-    "Email": "dami@dami.com",
-    "Name": "Damian",
-    "LastName": "Cortez",
-    "PhotoUrl": "https://i.blogs.es/2d5264/facebook-image/450_1000.jpg",
-    "TelephoneId": 1,
-    "LocationId": 1,
-    "PreferenceId": 3,
-    "ExternalLoginId": 1
+    "Username": "ldossantos1",
+    "Password": "Developer",
+    "Email": "mslayny1@imgur.com",
+    "Person": {
+        "Name": "Jordon",
+        "LastName": "Kleint",
+        "DateOfBirth": "1958-06-25T00:50:28Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "607 665 0220",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 3
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-12-10T12:10:54Z",
+    "UpdateDate": "2020-11-12T00:48:09Z"
 }, {
-    "Username": "zoe",
-    "Password": "zoezoe",
-    "Email": "zoe@zoe.com",
-    "Name": "Zoely",
-    "LastName": "Cruz",
-    "PhotoUrl": "https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
-    "TelephoneId": 1,
-    "LocationId": 1,
-    "PreferenceId": 2,
-    "ExternalLoginId": 1
+    "Username": "doctor",
+    "Password": "Developer",
+    "Email": "vwoolfitt2@cyberchimps.com",
+    "Speciality": {
+        "Name": "Endocrinología",
+        "Description": "Endocrinología"
+    },
+    "Person": {
+        "Name": "Brennan",
+        "LastName": "Worland",
+        "DateOfBirth": "1967-07-02T22:30:07Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "239 162 3197",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-11-28T04:03:20Z",
+    "UpdateDate": "2020-12-11T07:17:03Z"
 }, {
-    "Username": "dan",
-    "Password": "dandan",
-    "Email": "dan@dan.com",
-    "Name": "Dante",
-    "LastName": "Vargas",
-    "PhotoUrl": "https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png",
-    "TelephoneId": 1,
-    "LocationId": 1,
-    "PreferenceId": 1,
-    "ExternalLoginId": 1
+    "Username": "osteinor3",
+    "Password": "Developer",
+    "Email": "flehuquet3@census.gov",
+    "Speciality": {
+        "Name": "Estomatología",
+        "Description": "Estomatología"
+    },
+    "Person": {
+        "Name": "Rosamond",
+        "LastName": "Feeny",
+        "DateOfBirth": "1974-09-11T11:20:11Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "420 536 8008",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-08-20T08:50:00Z",
+    "UpdateDate": "2020-08-17T15:27:33Z"
 }, {
-    "Username": "adminp",
-    "Password": "adminp",
-    "Email": "adminp@adminp.adminp",
-    "Name": "Admin",
-    "LastName": "Prueba",
-    "PhotoUrl": "https://lh3.googleusercontent.com/a-/AOh14GiZvU-l_ZFKsnXS0mlkiDzFxLHNX5ag7EKp7jw3=s96-c",
-    "TelephoneId": 1,
-    "LocationId": 1,
-    "PreferenceId": 2,
-    "ExternalLoginId": 1
+    "Username": "nsives4",
+    "Password": "Developer",
+    "Email": "bbeckers4@1688.com",
+    "Speciality": {
+        "Name": "Gastroenterología",
+        "Description": "Gastroenterología"
+    },
+    "Person": {
+        "Name": "Vivie",
+        "LastName": "Marshfield",
+        "DateOfBirth": "1959-09-03T00:52:59Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "211 226 8186",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-07-10T05:49:13Z",
+    "UpdateDate": "2020-12-07T23:56:44Z"
 }, {
-    "Username": "tutorp",
-    "Password": "tutorp",
-    "Email": "tutorp@tutorp.com",
-    "Name": "Tutor",
-    "LastName": "Prurba",
-    "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
-    "TelephoneId": 1,
-    "LocationId": 1,
-    "PreferenceId": 1,
-    "ExternalLoginId": 1
+    "Username": "mhatto5",
+    "Password": "Developer",
+    "Email": "mlassell5@weebly.com",
+    "Speciality": {
+        "Name": "Geriatría",
+        "Description": "Geriatría"
+    },
+    "Person": {
+        "Name": "Lydon",
+        "LastName": "Agiolfinger",
+        "DateOfBirth": "2005-03-10T17:36:37Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "869 773 2276",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-11-21T06:31:50Z",
+    "UpdateDate": "2020-08-28T19:59:34Z"
+}, {
+    "Username": "dwetwood6",
+    "Password": "Developer",
+    "Email": "brelfe6@altervista.org",
+    "Speciality": {
+        "Name": "Hematología",
+        "Description": "Hematología"
+    },
+    "Person": {
+        "Name": "Clarine",
+        "LastName": "Mollindinia",
+        "DateOfBirth": "1997-12-01T13:38:22Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "169 657 0583",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2021-03-29T04:41:56Z",
+    "UpdateDate": "2020-07-26T22:28:42Z"
+}, {
+    "Username": "fedsall7",
+    "Password": "Developer",
+    "Email": "tnormanvill7@diigo.com",
+    "Speciality": {
+        "Name": "Hepatología",
+        "Description": "Hepatología"
+    },
+    "Person": {
+        "Name": "Jo-ann",
+        "LastName": "Lygoe",
+        "DateOfBirth": "1989-04-14T10:22:02Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "890 568 4643",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-12-17T07:32:13Z",
+    "UpdateDate": "2021-01-19T16:10:07Z"
+}, {
+    "Username": "nluparto8",
+    "Password": "Developer",
+    "Email": "lnisuis8@tiny.cc",
+    "Speciality": {
+        "Name": "Infectología",
+        "Description": "Infectología"
+    },
+    "Person": {
+        "Name": "Aurore",
+        "LastName": "Klimkin",
+        "DateOfBirth": "1999-04-19T08:08:15Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "729 386 3051",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 2
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-12-21T01:19:01Z",
+    "UpdateDate": "2020-12-22T15:38:09Z"
+}, {
+    "Username": "nurse",
+    "Password": "Developer",
+    "Email": "rmorecombe9@thetimes.co.uk",
+    "Person": {
+        "Name": "Ewan",
+        "LastName": "Asmus",
+        "DateOfBirth": "1964-10-27T11:06:50Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "999 266 6159",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-10-08T17:37:25Z",
+    "UpdateDate": "2020-05-05T04:07:32Z"
+}, {
+    "Username": "ntanswilla",
+    "Password": "Developer",
+    "Email": "mallreda@ucla.edu",
+    "Person": {
+        "Name": "Bat",
+        "LastName": "Jarrold",
+        "DateOfBirth": "1986-08-03T02:40:36Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "654 982 4164",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-07-17T14:30:25Z",
+    "UpdateDate": "2020-05-27T20:40:19Z"
+}, {
+    "Username": "spobjayb",
+    "Password": "Developer",
+    "Email": "cmarsayb@unesco.org",
+    "Person": {
+        "Name": "Neille",
+        "LastName": "Kellough",
+        "DateOfBirth": "1978-05-09T16:31:47Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "650 235 7390",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-08-21T11:18:25Z",
+    "UpdateDate": "2020-09-19T02:08:41Z"
+}, {
+    "Username": "npalleyc",
+    "Password": "Developer",
+    "Email": "cdouganc@histats.com",
+    "Person": {
+        "Name": "Ephrem",
+        "LastName": "Duley",
+        "DateOfBirth": "1978-01-20T07:15:03Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "709 411 6272",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-06-03T03:24:47Z",
+    "UpdateDate": "2020-09-02T08:59:38Z"
+}, {
+    "Username": "aridgwayd",
+    "Password": "Developer",
+    "Email": "bblountd@wiley.com",
+    "Person": {
+        "Name": "Gianna",
+        "LastName": "Tokley",
+        "DateOfBirth": "1974-01-11T19:02:26Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "451 455 3684",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2021-01-31T00:09:29Z",
+    "UpdateDate": "2020-12-12T02:31:25Z"
+}, {
+    "Username": "posheae",
+    "Password": "Developer",
+    "Email": "rcoalbrane@typepad.com",
+    "Person": {
+        "Name": "Ariel",
+        "LastName": "Ferron",
+        "DateOfBirth": "1998-08-03T20:59:26Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "779 918 8850",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-12-08T19:13:03Z",
+    "UpdateDate": "2020-08-09T14:55:58Z"
+}, {
+    "Username": "yfeldharkerf",
+    "Password": "Developer",
+    "Email": "mtodarof@apple.com",
+    "Person": {
+        "Name": "Raffarty",
+        "LastName": "Hodgin",
+        "DateOfBirth": "1973-11-07T08:10:00Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "811 927 5826",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-04-22T05:09:41Z",
+    "UpdateDate": "2021-01-27T04:04:34Z"
+}, {
+    "Username": "nlardgeg",
+    "Password": "Developer",
+    "Email": "mgarrickg@aboutads.info",
+    "Person": {
+        "Name": "Tobit",
+        "LastName": "Creedland",
+        "DateOfBirth": "1982-06-08T13:03:41Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "954 419 3765",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-11-05T10:45:15Z",
+    "UpdateDate": "2020-06-12T03:31:59Z"
+}, {
+    "Username": "fgoymerh",
+    "Password": "Developer",
+    "Email": "aducarneh@indiegogo.com",
+    "Person": {
+        "Name": "Patricia",
+        "LastName": "Salerg",
+        "DateOfBirth": "1997-06-27T17:29:27Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "645 443 9155",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-09-20T20:41:23Z",
+    "UpdateDate": "2020-07-03T08:10:55Z"
+}, {
+    "Username": "zmoweri",
+    "Password": "Developer",
+    "Email": "jlelandi@flickr.com",
+    "Person": {
+        "Name": "Cecil",
+        "LastName": "Edgeller",
+        "DateOfBirth": "1957-09-02T01:58:42Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "792 628 7192",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-09-13T23:38:42Z",
+    "UpdateDate": "2021-02-09T00:19:09Z"
+}, {
+    "Username": "mreingerj",
+    "Password": "Developer",
+    "Email": "amouldingj@flickr.com",
+    "Person": {
+        "Name": "Pierrette",
+        "LastName": "Windridge",
+        "DateOfBirth": "1971-02-22T11:22:52Z",
+        "PhotoUrl": "http://res.cloudinary.com/dzxmzxvbr/image/upload/v1602704289/c9ltck0zttotvz9hpmhu.png",
+        "CI": "737 526 4776",
+        "ExpeditionCi": "LP"
+    },
+    "UserRols": [{
+        "RolId": 1
+    }],
+    "CreationUserId": 1,
+    "UpdateUserId": 1,
+    "CreationDate": "2020-06-29T22:13:07Z",
+    "UpdateDate": "2020-11-14T18:39:50Z"
 }]

@@ -290,8 +290,8 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Ci")
-                        .HasColumnType("integer");
+                    b.Property<string>("Ci")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("timestamp without time zone");

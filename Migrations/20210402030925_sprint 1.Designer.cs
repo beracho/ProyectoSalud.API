@@ -10,7 +10,7 @@ using ProyectoSalud.API.Data;
 namespace ProyectoSalud.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210401051915_sprint 1")]
+    [Migration("20210402030925_sprint 1")]
     partial class sprint1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -292,8 +292,8 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Ci")
-                        .HasColumnType("integer");
+                    b.Property<string>("Ci")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("timestamp without time zone");
