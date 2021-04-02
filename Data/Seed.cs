@@ -71,6 +71,7 @@ namespace ProyectoSalud.API.Data
         {
             // Add fake users and its dependencies
             SeedFakeUsers();
+            SeedFakePatients();
         }
 
         public void SeedFakeUsers()
@@ -110,6 +111,23 @@ namespace ProyectoSalud.API.Data
             _context.SaveChanges();
         }
 
+        public void SeedFakePatients()
+        {
+            var patientData = System.IO.File.ReadAllText("Data/SeedFakeData/PatientSeedData.json");
+            var patients = JsonConvert.DeserializeObject<List<Person>>(patientData);
+
+            foreach (var patient in patients)
+            {
+                _context.Persons.Add(patient);
+
+                var insure = patient.Insure;
+                if (insure != null)
+                {
+                    _context.Insures.Add(insure);
+                }
+            }
+            _context.SaveChanges();
+        }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {

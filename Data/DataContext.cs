@@ -44,6 +44,11 @@ namespace ProyectoSalud.API.Data
                 .WithMany(u => u.Users)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Insure>()
+                .HasOne(i => i.Insurer)
+                .WithMany(i => i.Insurees)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.Entity<Person>()
                 .HasOne(p => p.MedicalHistory)
                 .WithOne(mh => mh.Patient);

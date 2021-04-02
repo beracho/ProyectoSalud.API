@@ -10,7 +10,7 @@ using ProyectoSalud.API.Data;
 namespace ProyectoSalud.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210402030925_sprint 1")]
+    [Migration("20210402035723_sprint 1")]
     partial class sprint1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -203,7 +203,7 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<DateTime>("InsuranceDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("InsurerId")
+                    b.Property<int?>("InsurerId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Type")
@@ -217,11 +217,7 @@ namespace ProyectoSalud.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreationUserId");
-
                     b.HasIndex("InsurerId");
-
-                    b.HasIndex("UpdateUserId");
 
                     b.ToTable("Insures");
                 });
@@ -649,23 +645,10 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Insure", b =>
                 {
-                    b.HasOne("ProyectoSalud.API.Models.User", "CreationUser")
-                        .WithMany()
-                        .HasForeignKey("CreationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ProyectoSalud.API.Models.Insure", "Insurer")
                         .WithMany("Insurees")
                         .HasForeignKey("InsurerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoSalud.API.Models.User", "UpdateUser")
-                        .WithMany()
-                        .HasForeignKey("UpdateUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Location", b =>

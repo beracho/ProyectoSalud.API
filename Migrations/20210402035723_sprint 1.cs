@@ -193,7 +193,7 @@ namespace ProyectoSalud.API.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Type = table.Column<string>(nullable: true),
                     InsuranceDate = table.Column<DateTime>(nullable: false),
-                    InsurerId = table.Column<int>(nullable: false),
+                    InsurerId = table.Column<int>(nullable: true),
                     CreationDate = table.Column<DateTime>(nullable: false),
                     UpdateDate = table.Column<DateTime>(nullable: false),
                     CreationUserId = table.Column<int>(nullable: false),
@@ -203,23 +203,11 @@ namespace ProyectoSalud.API.Migrations
                 {
                     table.PrimaryKey("PK_Insures", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Insures_Users_CreationUserId",
-                        column: x => x.CreationUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Insures_Insures_InsurerId",
                         column: x => x.InsurerId,
                         principalTable: "Insures",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Insures_Users_UpdateUserId",
-                        column: x => x.UpdateUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -432,19 +420,9 @@ namespace ProyectoSalud.API.Migrations
                 column: "UpdateUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Insures_CreationUserId",
-                table: "Insures",
-                column: "CreationUserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Insures_InsurerId",
                 table: "Insures",
                 column: "InsurerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Insures_UpdateUserId",
-                table: "Insures",
-                column: "UpdateUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MedicalHistories_CreationUserId",
