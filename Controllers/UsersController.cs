@@ -79,5 +79,30 @@ namespace ProyectoSalud.API.Controllers
                 return BadRequest("error_on_execution");
             }
         }
+
+        [HttpPut("{userId}/ChangePassword")]
+        public async Task<IActionResult> ChangePassword(int userId, UserForChangePasswordDto userForChangePasswordDto)
+        {
+            if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            {
+                return Unauthorized();
+            }
+            try
+            {
+                var response = await _authRepo.ChangePassword(userForChangePasswordDto);
+
+                if (response != "")
+                {
+                    return BadRequest(response);
+                }
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest("update_failed");
+            }
+        }
     }
 }

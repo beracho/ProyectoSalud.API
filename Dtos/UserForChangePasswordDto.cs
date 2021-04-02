@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using ProyectoSalud.API.Models;
-
 namespace ProyectoSalud.API.Dtos
 {
     public class UserForChangePasswordDto
