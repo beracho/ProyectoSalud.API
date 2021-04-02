@@ -48,10 +48,6 @@ namespace ProyectoSalud.API.Controllers
                 var CurrentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
                 var userFromRepo = await _repo.GetUser(CurrentUserId);
                 userParams.UserId = CurrentUserId;
-                if (string.IsNullOrEmpty(userParams.Gender))
-                {
-                    userParams.Gender = userFromRepo.Person.Gender == "male" ? "female" : "male";
-                }
                 var users = await _repo.GetUsers(userParams);
                 var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
                 Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);

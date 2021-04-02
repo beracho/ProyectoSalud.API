@@ -15,6 +15,12 @@ namespace ProyectoSalud.API.Helpers
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Person.Name))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Person.LastName));
             CreateMap<UserForUpdateDto, User>();
+            CreateMap<User, UserForListDto>()
+                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Person.Name))
+                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Person.LastName))
+                .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Person.Gender))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Person.DateOfBirth.CalculateAge()))
+                .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Person.PhotoUrl));
             CreateMap<UserForRegisterDto, User>();
                 // .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.FirstName));
             CreateMap<UserForRecoveryDto, UserForRegisterDto>()

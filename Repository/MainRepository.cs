@@ -81,7 +81,6 @@ namespace ProyectoSalud.API.Data
             .AsQueryable();
 
             users = users.Where(user => user.Id != userParams.UserId);
-            users = users.Where(user => user.Person.Gender == userParams.Gender);
 
             if (!string.IsNullOrEmpty(userParams.OrderBy))
             {
