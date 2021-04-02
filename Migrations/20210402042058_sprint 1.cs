@@ -160,12 +160,6 @@ namespace ProyectoSalud.API.Migrations
                 {
                     table.PrimaryKey("PK_ConsultingRooms", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ConsultingRooms_Users_CreationUserId",
-                        column: x => x.CreationUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_ConsultingRooms_Locations_LocationId",
                         column: x => x.LocationId,
                         principalTable: "Locations",
@@ -175,12 +169,6 @@ namespace ProyectoSalud.API.Migrations
                         name: "FK_ConsultingRooms_Telephones_TelephoneId",
                         column: x => x.TelephoneId,
                         principalTable: "Telephones",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ConsultingRooms_Users_UpdateUserId",
-                        column: x => x.UpdateUserId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -400,11 +388,6 @@ namespace ProyectoSalud.API.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ConsultingRooms_CreationUserId",
-                table: "ConsultingRooms",
-                column: "CreationUserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ConsultingRooms_LocationId",
                 table: "ConsultingRooms",
                 column: "LocationId");
@@ -413,11 +396,6 @@ namespace ProyectoSalud.API.Migrations
                 name: "IX_ConsultingRooms_TelephoneId",
                 table: "ConsultingRooms",
                 column: "TelephoneId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ConsultingRooms_UpdateUserId",
-                table: "ConsultingRooms",
-                column: "UpdateUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Insures_InsurerId",

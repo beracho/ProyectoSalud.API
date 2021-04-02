@@ -10,7 +10,7 @@ using ProyectoSalud.API.Data;
 namespace ProyectoSalud.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210402035723_sprint 1")]
+    [Migration("20210402042058_sprint 1")]
     partial class sprint1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,13 +120,9 @@ namespace ProyectoSalud.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreationUserId");
-
                     b.HasIndex("LocationId");
 
                     b.HasIndex("TelephoneId");
-
-                    b.HasIndex("UpdateUserId");
 
                     b.ToTable("ConsultingRooms");
                 });
@@ -611,12 +607,6 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.ConsultingRoom", b =>
                 {
-                    b.HasOne("ProyectoSalud.API.Models.User", "CreationUser")
-                        .WithMany()
-                        .HasForeignKey("CreationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ProyectoSalud.API.Models.Location", "Location")
                         .WithMany()
                         .HasForeignKey("LocationId")
@@ -626,12 +616,6 @@ namespace ProyectoSalud.API.Migrations
                     b.HasOne("ProyectoSalud.API.Models.Telephone", "Telephone")
                         .WithMany()
                         .HasForeignKey("TelephoneId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoSalud.API.Models.User", "UpdateUser")
-                        .WithMany()
-                        .HasForeignKey("UpdateUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

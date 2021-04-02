@@ -72,6 +72,7 @@ namespace ProyectoSalud.API.Data
             // Add fake users and its dependencies
             SeedFakeUsers();
             SeedFakePatients();
+            SeedFakeConsultingRoom();
         }
 
         public void SeedFakeUsers()
@@ -124,6 +125,30 @@ namespace ProyectoSalud.API.Data
                 if (insure != null)
                 {
                     _context.Insures.Add(insure);
+                }
+            }
+            _context.SaveChanges();
+        }
+
+        public void SeedFakeConsultingRoom()
+        {
+            var consultingRoomsData = System.IO.File.ReadAllText("Data/SeedFakeData/ConsultingRoomSeedData.json");
+            var consultingRooms = JsonConvert.DeserializeObject<List<ConsultingRoom>>(consultingRoomsData);
+
+            foreach (var consultingRoom in consultingRooms)
+            {
+                _context.ConsultingRooms.Add(consultingRoom);
+
+                var telephone = consultingRoom.Telephone;
+                if (telephone != null)
+                {
+                    _context.Telephones.Add(telephone);
+                }
+
+                var location = consultingRoom.Location;
+                if (location != null)
+                {
+                    _context.Locations.Add(location);
                 }
             }
             _context.SaveChanges();

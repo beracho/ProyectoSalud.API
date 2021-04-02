@@ -1,0 +1,103 @@
+[{
+    "Name": "Schuster Inc",
+    "Description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
+    "Telephone": {
+        "Number": "(947) 1842210"
+    },
+    "Location": {
+        "CountryAddressId": 108,
+        "CityAddressId": 1,
+        "Address1": "2418 Dahle Lane",
+        "Address2": "65019 Maple Street",
+        "PostalCode": "5133"
+    },
+    "CreationDate": "2020-08-28T00:25:54Z",
+    "UpdateDate": "2020-05-22T18:03:30Z",
+    "CreationUserId": 1,
+    "UpdateUserId": 1
+}, {
+    "Name": "Langosh-Swift",
+    "Description": "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
+    "Telephone": {
+        "Number": "(413) 4232308"
+    },
+    "Location": {
+        "CountryAddressId": 108,
+        "CityAddressId": 1,
+        "Address1": "34864 Oak Valley Road",
+        "Address2": "50 Forest Run Trail",
+        "PostalCode": null
+    },
+    "CreationDate": "2021-02-06T00:53:25Z",
+    "UpdateDate": "2020-06-28T08:32:27Z",
+    "CreationUserId": 1,
+    "UpdateUserId": 1
+}, {
+    "Name": "Cronin LLC",
+    "Description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    "Telephone": {
+        "Number": "(432) 3788713"
+    },
+    "Location": {
+        "CountryAddressId": 108,
+        "CityAddressId": 1,
+        "Address1": "90710 Tony Alley",
+        "Address2": "66905 Buell Junction",
+        "PostalCode": null
+    },
+    "CreationDate": "2020-12-24T20:47:01Z",
+    "UpdateDate": "2020-05-03T19:03:47Z",
+    "CreationUserId": 1,
+    "UpdateUserId": 1
+}, {
+    "Name": "Zieme Inc",
+    "Description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "Telephone": {
+        "Number": "(152) 5602336"
+    },
+    "Location": {
+        "CountryAddressId": 108,
+        "CityAddressId": 1,
+        "Address1": "18 Dexter Court",
+        "Address2": "71 Donald Avenue",
+        "PostalCode": null
+    },
+    "CreationDate": "2020-08-06T20:04:31Z",
+    "UpdateDate": "2021-03-31T23:21:34Z",
+    "CreationUserId": 1,
+    "UpdateUserId": 1
+}, {
+    "Name": "Champlin-Terry",
+    "Description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.",
+    "Telephone": {
+        "Number": "(925) 9934295"
+    },
+    "Location": {
+        "CountryAddressId": 108,
+        "CityAddressId": 1,
+        "Address1": "085 Monument Terrace",
+        "Address2": "30517 Ludington Way",
+        "PostalCode": "55000"
+    },
+    "CreationDate": "2021-03-12T14:29:34Z",
+    "UpdateDate": "2021-01-16T10:48:59Z",
+    "CreationUserId": 1,
+    "UpdateUserId": 1
+}, {
+    "Name": "Crona Inc",
+    "Description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
+    "Telephone": {
+        "Number": "(450) 9532949"
+    },
+    "Location": {
+        "CountryAddressId": 108,
+        "CityAddressId": 1,
+        "Address1": "25282 Heffernan Parkway",
+        "Address2": "456 Kings Point",
+        "PostalCode": "1522"
+    },
+    "CreationDate": "2020-12-26T08:47:30Z",
+    "UpdateDate": "2020-07-05T04:21:28Z",
+    "CreationUserId": 1,
+    "UpdateUserId": 1
+}]
