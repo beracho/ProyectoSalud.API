@@ -45,13 +45,7 @@ namespace ProyectoSalud.API
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
-            services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddScoped<ISeedRepository, Seed>();
-            services.AddScoped<IConsultingRoomRepository, ConsultingRoomRepository>();
-            services.AddScoped<IUserValidation, UserValidation>();
-            services.AddScoped<IMainRepository, MainRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IPersonRepository, PersonRepository>();
+            LoadRepositories(services);
             // services.AddScoped<LogUserActivity>();
             services.AddCors(options =>
             {
@@ -60,7 +54,7 @@ namespace ProyectoSalud.API
                     builder =>
                     {
                         // builder.SetIsOriginAllowed(origin => true);
-                        builder.WithOrigins("http://localhost:3001", "http://localhost:3000", "https://localhost:3000", "https://ProyectoSalud.net/", "https://ProyectoSalud.org/");
+                        builder.WithOrigins("http://localhost:4200", "https://localhost:4200", "https://ProyectoSalud.net/", "https://ProyectoSalud.org/", "https://ProyectoSalud.com/");
                         builder.AllowAnyHeader();
                         builder.AllowCredentials();
                         builder.AllowAnyMethod();
@@ -130,6 +124,16 @@ namespace ProyectoSalud.API
                 );
                 endpoints.MapFallbackToController("Index", "Home");
             });
+        }
+        void LoadRepositories(IServiceCollection services)
+        {
+            services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ISeedRepository, Seed>();
+            services.AddScoped<IConsultingRoomRepository, ConsultingRoomRepository>();
+            services.AddScoped<IUserValidation, UserValidation>();
+            services.AddScoped<IMainRepository, MainRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
         }
     }
 }
