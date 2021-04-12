@@ -17,7 +17,8 @@ namespace ProyectoSalud.API.Repository
         public async Task<List<ConsultingRoom>> GetConsultingRoomsList()
         {
             var consultingRoomsList = await _context.ConsultingRooms
-            .Include(cr => cr.Location)
+            .Include(cr => cr.Location).ThenInclude(l => l.CityAddress)
+            .Include(cr => cr.Location).ThenInclude(l => l.CountryAddress)
             .Include(cr => cr.Telephone)
             .ToListAsync();
             return consultingRoomsList;

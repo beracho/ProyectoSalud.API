@@ -11,12 +11,20 @@ namespace ProyectoSalud.API.Models
         public string Ci { get; set; }
         public string ExpeditionCi { get; set; }
         public string Gender { get; set; }
+        public string Ocupation { get; set; }
         public string PhotoUrl { get; set; }
+        public string CivilStatus { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public string Regional { get; set; }
+        public string BornState { get; set; }
+        public City BornCity { get; set; }
+        public string BloodType { get; set; }
         public virtual Location Location { get; set; }
         public int? LocationId { get; set; }
         public virtual Telephone Telephone { get; set; }
         public int? TelephoneId { get; set; }
+        public virtual Telephone CellPhone { get; set; }
+        public int? CellPhoneId { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual User User { get; set; }
         public virtual Insure Insure { get; set; }

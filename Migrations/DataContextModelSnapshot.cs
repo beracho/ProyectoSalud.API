@@ -194,11 +194,26 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<int>("CreationUserId")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<DateTime>("InsuranceDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int?>("InsurerId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("Kinship")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Observations")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PathologicalBackground")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Type")
                         .HasColumnType("text");
@@ -282,7 +297,22 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<string>("BloodType")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("BornCityId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("BornState")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("CellPhoneId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Ci")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CivilStatus")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreationDate")
@@ -315,7 +345,13 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
+                    b.Property<string>("Ocupation")
+                        .HasColumnType("text");
+
                     b.Property<string>("PhotoUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Regional")
                         .HasColumnType("text");
 
                     b.Property<int?>("TelephoneId")
@@ -328,6 +364,10 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BornCityId");
+
+                    b.HasIndex("CellPhoneId");
 
                     b.HasIndex("InsureId");
 
@@ -665,6 +705,14 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Person", b =>
                 {
+                    b.HasOne("ProyectoSalud.API.Models.City", "BornCity")
+                        .WithMany()
+                        .HasForeignKey("BornCityId");
+
+                    b.HasOne("ProyectoSalud.API.Models.Telephone", "CellPhone")
+                        .WithMany()
+                        .HasForeignKey("CellPhoneId");
+
                     b.HasOne("ProyectoSalud.API.Models.Insure", "Insure")
                         .WithMany()
                         .HasForeignKey("InsureId");
