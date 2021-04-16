@@ -30,6 +30,16 @@ namespace ProyectoSalud.API.Repository
             return insures;
         }
 
+        public async Task<Person> GetPatientByRegistrationNumber(string registrationNumber)
+        {
+            var insure = await _context.Persons
+            .Where(i => i.Insure.RegistrationNumber == registrationNumber)
+            .Include(p => p.Insure)
+            .FirstOrDefaultAsync();
+
+            return insure;
+        }
+
         public async Task<Insure> CreateInsure(Insure insureToCreate)
         {
             var insureFromRepo = await _context.Insures.FirstOrDefaultAsync(i => i.RegistrationNumber == insureToCreate.RegistrationNumber);

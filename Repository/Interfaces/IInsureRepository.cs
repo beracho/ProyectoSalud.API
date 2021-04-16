@@ -8,6 +8,7 @@ namespace ProyectoSalud.API.Repository.Interfaces
     public interface IInsureRepository
     {
         Task<List<Person>> GetPatients();
+        Task<Person> GetPatientByRegistrationNumber(string registrationNumber);
         Task<Insure> CreateInsure(Insure insureToCreate);
         string GenerateRegistrationNumber(string Name, string LastName, DateTime BirthDate);
     }

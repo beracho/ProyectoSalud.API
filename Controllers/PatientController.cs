@@ -53,6 +53,22 @@ namespace ProyectoSalud.API.Controllers
             }
         }
 
+        [HttpGet("{registrationNumber}")]
+        public async Task<IActionResult> GetPatientsByRegistrationNumber(string registrationNumber)
+        {
+            try
+            {
+                var patient = await _insureRepo.GetPatientByRegistrationNumber(registrationNumber);
+                var patientToReturn = _mapper.Map<PatientToReturnDto>(patient);
+                return Ok(patientToReturn);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest("error_on_execution");
+            }
+        }
+
         [Authorize(Roles = "admin, nurse")]
         [HttpPost]
         public async Task<IActionResult> RegisterPatient(PatientRegistrationDto PatientRegistration)
