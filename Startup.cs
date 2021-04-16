@@ -128,12 +128,15 @@ namespace ProyectoSalud.API
         void LoadRepositories(IServiceCollection services)
         {
             services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddScoped<ISeedRepository, Seed>();
+            services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IConsultingRoomRepository, ConsultingRoomRepository>();
-            services.AddScoped<IUserValidation, UserValidation>();
+            services.AddScoped<IInsureRepository, InsureRepository>();
             services.AddScoped<IMainRepository, MainRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<ISeedRepository, Seed>();
+            services.AddScoped<ITelephoneRepository, TelephoneRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserValidation, UserValidation>();
         }
     }
 }

@@ -1,5 +1,5 @@
-using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ProyectoSalud.API.Data;
 using ProyectoSalud.API.Models;
@@ -10,24 +10,33 @@ namespace ProyectoSalud.API.Repository
     public class PersonRepository : IPersonRepository
     {
         private readonly DataContext _context;
-        private readonly IAuthRepository _authRepo;
-        private readonly IMainRepository _mainRepo;
-        public PersonRepository(DataContext context, IAuthRepository authRepo, IMainRepository mainRepo)
+        private readonly IMapper _mapper;
+        public PersonRepository(DataContext context, IMapper mapper)
         {
             _context = context;
-            _authRepo = authRepo;
-            _mainRepo = mainRepo;
+            _mapper = mapper;
         }
 
         public async Task<Person> GetPerson(int userId)
         {
-            var person = await _context.Users
-            .Where(u => u.Id == userId)
-            .Select(u => u.Person)
-            .FirstOrDefaultAsync();
+            var personFromRepo = await _context.Persons.FirstOrDefaultAsync(p => p.Id == userId);
 
-            return person;
+            return personFromRepo;
         }
 
+        public async Task<Person> FindPersonByCi(string ci)
+        {
+            var personFromRepo = await _context.Persons.FirstOrDefaultAsync(p => p.Ci == ci);
+
+            return personFromRepo;
+        }
+
+        public async Task<Person> CreatePerson(Person personToCreate)
+        {
+            _context.Persons.Add(personToCreate);
+            await _context.SaveChangesAsync();
+
+            return personToCreate;
+        }
     }
 }
