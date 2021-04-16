@@ -10,7 +10,7 @@ using ProyectoSalud.API.Data;
 namespace ProyectoSalud.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210412162714_sprint 1")]
+    [Migration("20210416045214_sprint 1")]
     partial class sprint1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -217,6 +217,9 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("RegistrationNumber")
+                        .HasColumnType("text");
+
                     b.Property<string>("Type")
                         .HasColumnType("text");
 
@@ -299,13 +302,16 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("BloodType")
+                    b.Property<string>("BirthCity")
                         .HasColumnType("text");
 
-                    b.Property<int?>("BornCityId")
-                        .HasColumnType("integer");
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("BornState")
+                    b.Property<string>("BirthState")
+                        .HasColumnType("text");
+
+                    b.Property<string>("BloodType")
                         .HasColumnType("text");
 
                     b.Property<int?>("CellPhoneId")
@@ -322,9 +328,6 @@ namespace ProyectoSalud.API.Migrations
 
                     b.Property<int>("CreationUserId")
                         .HasColumnType("integer");
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("ExpeditionCi")
                         .HasColumnType("text");
@@ -366,8 +369,6 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BornCityId");
 
                     b.HasIndex("CellPhoneId");
 
@@ -707,10 +708,6 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Person", b =>
                 {
-                    b.HasOne("ProyectoSalud.API.Models.City", "BornCity")
-                        .WithMany()
-                        .HasForeignKey("BornCityId");
-
                     b.HasOne("ProyectoSalud.API.Models.Telephone", "CellPhone")
                         .WithMany()
                         .HasForeignKey("CellPhoneId");

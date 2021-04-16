@@ -180,6 +180,7 @@ namespace ProyectoSalud.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Type = table.Column<string>(nullable: true),
+                    RegistrationNumber = table.Column<string>(nullable: true),
                     InsuranceDate = table.Column<DateTime>(nullable: false),
                     Kinship = table.Column<string>(nullable: true),
                     Observations = table.Column<string>(nullable: true),
@@ -309,10 +310,10 @@ namespace ProyectoSalud.API.Migrations
                     Ocupation = table.Column<string>(nullable: true),
                     PhotoUrl = table.Column<string>(nullable: true),
                     CivilStatus = table.Column<string>(nullable: true),
-                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    BirthDate = table.Column<DateTime>(nullable: false),
                     Regional = table.Column<string>(nullable: true),
-                    BornState = table.Column<string>(nullable: true),
-                    BornCityId = table.Column<int>(nullable: true),
+                    BirthState = table.Column<string>(nullable: true),
+                    BirthCity = table.Column<string>(nullable: true),
                     BloodType = table.Column<string>(nullable: true),
                     LocationId = table.Column<int>(nullable: true),
                     TelephoneId = table.Column<int>(nullable: true),
@@ -327,12 +328,6 @@ namespace ProyectoSalud.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Persons", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Persons_Cities_BornCityId",
-                        column: x => x.BornCityId,
-                        principalTable: "Cities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Persons_Telephones_CellPhoneId",
                         column: x => x.CellPhoneId,
@@ -435,11 +430,6 @@ namespace ProyectoSalud.API.Migrations
                 name: "IX_MedicalHistories_UpdateUserId",
                 table: "MedicalHistories",
                 column: "UpdateUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Persons_BornCityId",
-                table: "Persons",
-                column: "BornCityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Persons_CellPhoneId",

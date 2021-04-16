@@ -14,10 +14,10 @@ namespace ProyectoSalud.API.Models
         public string Ocupation { get; set; }
         public string PhotoUrl { get; set; }
         public string CivilStatus { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime BirthDate { get; set; }
         public string Regional { get; set; }
-        public string BornState { get; set; }
-        public City BornCity { get; set; }
+        public string BirthState { get; set; }
+        public string BirthCity { get; set; }
         public string BloodType { get; set; }
         public virtual Location Location { get; set; }
         public int? LocationId { get; set; }

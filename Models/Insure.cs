@@ -6,7 +6,8 @@ namespace ProyectoSalud.API.Models
     public class Insure
     {
         public int Id { get; set; }
-        public string Type { get; set; } //insured - beneficiary
+        public string Type { get; set; } //insured - beneficiary - patient
+        public string RegistrationNumber { get; set; }
         public DateTime InsuranceDate { get; set; }
         public string Kinship { get; set; }
         public string Observations { get; set; } // JSON
