@@ -11,7 +11,7 @@ namespace ProyectoSalud.API.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<User, UserForDetailedDto>()
-                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Person.DateOfBirth.CalculateAge()))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Person.BirthDate.CalculateAge()))
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Person.Name))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Person.LastName));
             CreateMap<UserForUpdateDto, User>();
@@ -19,10 +19,9 @@ namespace ProyectoSalud.API.Helpers
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Person.Name))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Person.LastName))
                 .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Person.Gender))
-                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Person.DateOfBirth.CalculateAge()))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Person.BirthDate.CalculateAge()))
                 .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Person.PhotoUrl));
             CreateMap<UserForRegisterDto, User>();
-                // .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.FirstName));
             CreateMap<UserForRecoveryDto, UserForRegisterDto>()
                 .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.UsernameOrEmail))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.UsernameOrEmail));
@@ -43,11 +42,17 @@ namespace ProyectoSalud.API.Helpers
                 .ForMember(dest => dest.PostalCode, opt => opt.MapFrom(src => src.PostalCode));
             CreateMap<UserForUpdateDto, User>()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                // .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-                // .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
-                // .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
-                // .ForMember(dest => dest.DateOfBirth, opt => opt.MapFrom(src => src.DateOfBirth))
                 .ForMember(dest => dest.Nickname, opt => opt.MapFrom(src => src.Nickname));
+            CreateMap<PatientRegistrationDto, Person>();
+            CreateMap<PatientRegistrationDto, Insure>();
+            CreateMap<Person, PatientToListDto>()
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type));
+            CreateMap<Person, PatientToReturnDto>()
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type))
+                .ForMember(dest => dest.RegistrationNumber, opt => opt.MapFrom(src => src.Insure.RegistrationNumber))
+                .ForMember(dest => dest.Kinship, opt => opt.MapFrom(src => src.Insure.Kinship))
+                .ForMember(dest => dest.Observations, opt => opt.MapFrom(src => src.Insure.Observations))
+                .ForMember(dest => dest.PathologicalBackground, opt => opt.MapFrom(src => src.Insure.PathologicalBackground));
         }
     }
 }
