@@ -45,6 +45,10 @@ namespace ProyectoSalud.API.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Insure>()
+                .HasIndex(i => i.RegistrationNumber)
+                .IsUnique();
+
+            builder.Entity<Insure>()
                 .HasOne(i => i.Insurer)
                 .WithMany(i => i.Insurees)
                 .OnDelete(DeleteBehavior.Restrict);

@@ -32,6 +32,13 @@ namespace ProyectoSalud.API.Repository
 
         public async Task<Insure> CreateInsure(Insure insureToCreate)
         {
+            var insureFromRepo = await _context.Insures.FirstOrDefaultAsync(i => i.RegistrationNumber == insureToCreate.RegistrationNumber);
+
+            if (insureFromRepo != null)
+            {
+                return insureFromRepo;
+            }
+            
             _context.Insures.Add(insureToCreate);
             await _context.SaveChangesAsync();
 

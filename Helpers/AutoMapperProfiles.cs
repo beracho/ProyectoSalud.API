@@ -46,7 +46,8 @@ namespace ProyectoSalud.API.Helpers
             CreateMap<PatientRegistrationDto, Person>();
             CreateMap<PatientRegistrationDto, Insure>();
             CreateMap<Person, PatientToListDto>()
-                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type));
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type))
+                .ForMember(dest => dest.RegistrationNumber, opt => opt.MapFrom(src => src.Insure.RegistrationNumber));
             CreateMap<Person, PatientToReturnDto>()
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type))
                 .ForMember(dest => dest.RegistrationNumber, opt => opt.MapFrom(src => src.Insure.RegistrationNumber))
