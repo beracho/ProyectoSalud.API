@@ -121,6 +121,12 @@ namespace ProyectoSalud.API.Data
             {
                 _context.Persons.Add(patient);
 
+                var medicalHistory = patient.MedicalHistory;
+                if (medicalHistory != null)
+                {
+                    _context.MedicalHistories.Add(medicalHistory);
+                }
+
                 var insure = patient.Insure;
                 if (insure != null)
                 {
