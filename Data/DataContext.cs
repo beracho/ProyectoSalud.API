@@ -57,10 +57,9 @@ namespace ProyectoSalud.API.Data
                 .HasOne(p => p.MedicalHistory)
                 .WithOne(mh => mh.Patient);
 
-            builder.Entity<MedicalHistory>()
-                .HasOne(mh => mh.CreationUser);
-            builder.Entity<MedicalHistory>()
-                .HasOne(mh => mh.UpdateUser);
+            builder.Entity<Consultation>()
+                .HasOne(c => c.MedicalHistory)
+                .WithMany(mh => mh.Consultations);
         }
     }
 }

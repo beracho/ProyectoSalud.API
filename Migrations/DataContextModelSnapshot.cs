@@ -46,6 +46,9 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<DateTime>("ConsultationDate")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<int>("ConsultingRoomId")
                         .HasColumnType("integer");
 
@@ -58,8 +61,17 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
+                    b.Property<string>("Diagnosis")
+                        .HasColumnType("text");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("MedicalHistoryId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("Symptoms")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("timestamp without time zone");
@@ -67,20 +79,13 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<int>("UpdateUserId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ConsultingRoomId");
 
-                    b.HasIndex("CreationUserId");
+                    b.HasIndex("DoctorId");
 
                     b.HasIndex("MedicalHistoryId");
-
-                    b.HasIndex("UpdateUserId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Consultations");
                 });
@@ -231,6 +236,9 @@ namespace ProyectoSalud.API.Migrations
 
                     b.HasIndex("InsurerId");
 
+                    b.HasIndex("RegistrationNumber")
+                        .IsUnique();
+
                     b.ToTable("Insures");
                 });
 
@@ -285,10 +293,6 @@ namespace ProyectoSalud.API.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreationUserId");
-
-                    b.HasIndex("UpdateUserId");
 
                     b.ToTable("MedicalHistories");
                 });
@@ -619,27 +623,15 @@ namespace ProyectoSalud.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProyectoSalud.API.Models.User", "CreationUser")
+                    b.HasOne("ProyectoSalud.API.Models.User", "Doctor")
                         .WithMany()
-                        .HasForeignKey("CreationUserId")
+                        .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProyectoSalud.API.Models.MedicalHistory", "MedicalHistory")
-                        .WithMany("Consultation")
+                        .WithMany("Consultations")
                         .HasForeignKey("MedicalHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoSalud.API.Models.User", "UpdateUser")
-                        .WithMany()
-                        .HasForeignKey("UpdateUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoSalud.API.Models.User", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -686,21 +678,6 @@ namespace ProyectoSalud.API.Migrations
                         .WithMany("LocationAddress")
                         .HasForeignKey("CountryAddressId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ProyectoSalud.API.Models.MedicalHistory", b =>
-                {
-                    b.HasOne("ProyectoSalud.API.Models.User", "CreationUser")
-                        .WithMany()
-                        .HasForeignKey("CreationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoSalud.API.Models.User", "UpdateUser")
-                        .WithMany()
-                        .HasForeignKey("UpdateUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 

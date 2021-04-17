@@ -218,18 +218,6 @@ namespace ProyectoSalud.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MedicalHistories", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_MedicalHistories_Users_CreationUserId",
-                        column: x => x.CreationUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MedicalHistories_Users_UpdateUserId",
-                        column: x => x.UpdateUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -253,9 +241,12 @@ namespace ProyectoSalud.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Description = table.Column<string>(nullable: true),
+                    Diagnosis = table.Column<string>(nullable: true),
+                    Symptoms = table.Column<string>(nullable: true),
+                    ConsultationDate = table.Column<DateTime>(nullable: false),
                     MedicalHistoryId = table.Column<int>(nullable: false),
                     ConsultingRoomId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
+                    DoctorId = table.Column<int>(nullable: false),
                     CreationDate = table.Column<DateTime>(nullable: false),
                     UpdateDate = table.Column<DateTime>(nullable: false),
                     CreationUserId = table.Column<int>(nullable: false),
@@ -271,8 +262,8 @@ namespace ProyectoSalud.API.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Consultations_Users_CreationUserId",
-                        column: x => x.CreationUserId,
+                        name: "FK_Consultations_Users_DoctorId",
+                        column: x => x.DoctorId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -280,18 +271,6 @@ namespace ProyectoSalud.API.Migrations
                         name: "FK_Consultations_MedicalHistories_MedicalHistoryId",
                         column: x => x.MedicalHistoryId,
                         principalTable: "MedicalHistories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Consultations_Users_UpdateUserId",
-                        column: x => x.UpdateUserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Consultations_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -387,24 +366,14 @@ namespace ProyectoSalud.API.Migrations
                 column: "ConsultingRoomId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Consultations_CreationUserId",
+                name: "IX_Consultations_DoctorId",
                 table: "Consultations",
-                column: "CreationUserId");
+                column: "DoctorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Consultations_MedicalHistoryId",
                 table: "Consultations",
                 column: "MedicalHistoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Consultations_UpdateUserId",
-                table: "Consultations",
-                column: "UpdateUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Consultations_UserId",
-                table: "Consultations",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ConsultingRooms_LocationId",
@@ -422,14 +391,10 @@ namespace ProyectoSalud.API.Migrations
                 column: "InsurerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MedicalHistories_CreationUserId",
-                table: "MedicalHistories",
-                column: "CreationUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MedicalHistories_UpdateUserId",
-                table: "MedicalHistories",
-                column: "UpdateUserId");
+                name: "IX_Insures_RegistrationNumber",
+                table: "Insures",
+                column: "RegistrationNumber",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Persons_CellPhoneId",
