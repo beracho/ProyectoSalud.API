@@ -133,6 +133,7 @@ namespace ProyectoSalud.API
             services.AddScoped<IConsultingRoomRepository, ConsultingRoomRepository>();
             services.AddScoped<IInsureRepository, InsureRepository>();
             services.AddScoped<IMainRepository, MainRepository>();
+            services.AddScoped<IMedicalHistoryRepository, MedicalHistoryRepository>();
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<ISeedRepository, Seed>();
             services.AddScoped<ITelephoneRepository, TelephoneRepository>();
