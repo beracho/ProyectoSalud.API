@@ -38,6 +38,7 @@ namespace ProyectoSalud.API.Controllers
                 try
                 {
                     consultationForCreation.CreationUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                    consultationForCreation.DoctorId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
                     var newConsultation = _mapper.Map<Consultation>(consultationForCreation);
                     newConsultation = await _consultationRepo.CreateConsultation(newConsultation);
 
