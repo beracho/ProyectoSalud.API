@@ -1,5 +1,4 @@
 using System;
-using ProyectoSalud.API.Models;
 
 namespace ProyectoSalud.API.Dtos
 {
@@ -18,14 +17,15 @@ namespace ProyectoSalud.API.Dtos
         public string BirthState { get; set; }
         public string BirthCity { get; set; } //
         public string BloodType { get; set; }
-        public virtual Location Location { get; set; }
-        public int? LocationId { get; set; }
-        public string TelephoneId { get; set; } //
-        public string CellPhoneId { get; set; } //
         public string Type { get; set; } //
         public string RegistrationNumber { get; set; } //
         public string Kinship { get; set; } //
         public string Observations { get; set; } //
         public string PathologicalBackground { get; set; } //
+        public int? LocationId { get; set; }
+        public string Telephone { get; set; } //
+        public string CellPhone { get; set; } //
+        public int InsureId { get; set; }
+        public int MedicalHistoryId { get; set; }
     }
 }

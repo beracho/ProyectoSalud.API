@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
@@ -45,10 +46,16 @@ namespace ProyectoSalud.API.Helpers
                 .ForMember(dest => dest.Nickname, opt => opt.MapFrom(src => src.Nickname));
             CreateMap<PatientRegistrationDto, Person>();
             CreateMap<PatientRegistrationDto, Insure>();
+            CreateMap<ConsultationForCreationDto, Consultation>()
+                .ForMember(dest => dest.UpdateUserId, opt => opt.MapFrom(src => src.CreationUserId))
+                .ForMember(dest => dest.UpdateDate, opt => opt.MapFrom(src => DateTime.Now))
+                .ForMember(dest => dest.CreationDate, opt => opt.MapFrom(src => DateTime.Now));
             CreateMap<Person, PatientToListDto>()
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type))
                 .ForMember(dest => dest.RegistrationNumber, opt => opt.MapFrom(src => src.Insure.RegistrationNumber));
             CreateMap<Person, PatientToReturnDto>()
+                .ForMember(dest => dest.Telephone, opt => opt.MapFrom(src => src.Telephone.Number))
+                .ForMember(dest => dest.CellPhone, opt => opt.MapFrom(src => src.CellPhone.Number))
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Insure.Type))
                 .ForMember(dest => dest.RegistrationNumber, opt => opt.MapFrom(src => src.Insure.RegistrationNumber))
                 .ForMember(dest => dest.Kinship, opt => opt.MapFrom(src => src.Insure.Kinship))
