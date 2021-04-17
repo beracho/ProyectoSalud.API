@@ -618,21 +618,21 @@ namespace ProyectoSalud.API.Migrations
             modelBuilder.Entity("ProyectoSalud.API.Models.Consultation", b =>
                 {
                     b.HasOne("ProyectoSalud.API.Models.ConsultingRoom", "ConsultingRoom")
-                        .WithMany()
+                        .WithMany("Consultations")
                         .HasForeignKey("ConsultingRoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ProyectoSalud.API.Models.User", "Doctor")
-                        .WithMany()
+                        .WithMany("Consultations")
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ProyectoSalud.API.Models.MedicalHistory", "MedicalHistory")
                         .WithMany("Consultations")
                         .HasForeignKey("MedicalHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -653,9 +653,10 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.File", b =>
                 {
-                    b.HasOne("ProyectoSalud.API.Models.Consultation", null)
+                    b.HasOne("ProyectoSalud.API.Models.Consultation", "Consultation")
                         .WithMany("Files")
-                        .HasForeignKey("ConsultationId");
+                        .HasForeignKey("ConsultationId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Insure", b =>

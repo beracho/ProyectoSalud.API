@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace ProyectoSalud.API.Models
 {
@@ -11,5 +10,7 @@ namespace ProyectoSalud.API.Models
         public string Type { get; set; }
         public DateTime DateAdded { get; set; }
         public string PublicId { get; set; }
+        public virtual Consultation Consultation { get; set; }
+        public int? ConsultationId { get; set; }
     }
 }

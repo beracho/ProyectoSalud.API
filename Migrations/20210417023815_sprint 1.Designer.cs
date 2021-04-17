@@ -10,7 +10,7 @@ using ProyectoSalud.API.Data;
 namespace ProyectoSalud.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210417012302_sprint 1")]
+    [Migration("20210417023815_sprint 1")]
     partial class sprint1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -620,21 +620,21 @@ namespace ProyectoSalud.API.Migrations
             modelBuilder.Entity("ProyectoSalud.API.Models.Consultation", b =>
                 {
                     b.HasOne("ProyectoSalud.API.Models.ConsultingRoom", "ConsultingRoom")
-                        .WithMany()
+                        .WithMany("Consultations")
                         .HasForeignKey("ConsultingRoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ProyectoSalud.API.Models.User", "Doctor")
-                        .WithMany()
+                        .WithMany("Consultations")
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ProyectoSalud.API.Models.MedicalHistory", "MedicalHistory")
                         .WithMany("Consultations")
                         .HasForeignKey("MedicalHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -655,9 +655,10 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.File", b =>
                 {
-                    b.HasOne("ProyectoSalud.API.Models.Consultation", null)
+                    b.HasOne("ProyectoSalud.API.Models.Consultation", "Consultation")
                         .WithMany("Files")
-                        .HasForeignKey("ConsultationId");
+                        .HasForeignKey("ConsultationId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Insure", b =>

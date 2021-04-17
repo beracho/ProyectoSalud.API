@@ -57,9 +57,23 @@ namespace ProyectoSalud.API.Data
                 .HasOne(p => p.MedicalHistory)
                 .WithOne(mh => mh.Patient);
 
+            builder.Entity<File>()
+                .HasOne(f => f.Consultation)
+                .WithMany(c => c.Files)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.Entity<Consultation>()
                 .HasOne(c => c.MedicalHistory)
-                .WithMany(mh => mh.Consultations);
+                .WithMany(mh => mh.Consultations)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Consultation>()
+                .HasOne(c => c.Doctor)
+                .WithMany(d => d.Consultations)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Consultation>()
+                .HasOne(c => c.ConsultingRoom)
+                .WithMany(cr => cr.Consultations)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

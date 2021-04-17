@@ -28,6 +28,7 @@ namespace ProyectoSalud.API.Models
         public int PersonId { get; set; }
         public Speciality Speciality { get; set; }
         public int? SpecialityId { get; set; }
+        public virtual ICollection<Consultation> Consultations { get; set; }
         public virtual ICollection<UserRol> UserRols { get; set; }
         // History params
         public DateTime CreationDate { get; set; }

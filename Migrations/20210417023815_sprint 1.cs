@@ -260,19 +260,19 @@ namespace ProyectoSalud.API.Migrations
                         column: x => x.ConsultingRoomId,
                         principalTable: "ConsultingRooms",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Consultations_Users_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Consultations_MedicalHistories_MedicalHistoryId",
                         column: x => x.MedicalHistoryId,
                         principalTable: "MedicalHistories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
