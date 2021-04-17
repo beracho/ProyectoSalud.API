@@ -60,6 +60,11 @@ namespace ProyectoSalud.API.Controllers
             {
                 var patient = await _insureRepo.GetPatientByRegistrationNumber(registrationNumber);
                 var patientToReturn = _mapper.Map<PatientToReturnDto>(patient);
+                if (patientToReturn == null)
+                {
+                    return BadRequest("patient_not_found");
+                }
+
                 return Ok(patientToReturn);
             }
             catch (Exception ex)
