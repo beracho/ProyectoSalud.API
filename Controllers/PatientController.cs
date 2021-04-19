@@ -36,7 +36,7 @@ namespace ProyectoSalud.API.Controllers
             _telephoneRepo = telephoneRepo;
         }
 
-        [Authorize(Roles = "admin, doctor")]
+        [Authorize(Roles = "admin, doctor, nurse")]
         [HttpGet]
         public async Task<IActionResult> GetPatients()
         {
@@ -53,6 +53,7 @@ namespace ProyectoSalud.API.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, doctor, nurse")]
         [HttpGet("{registrationNumber}")]
         public async Task<IActionResult> GetPatientsByRegistrationNumber(string registrationNumber)
         {
