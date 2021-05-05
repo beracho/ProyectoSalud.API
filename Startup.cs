@@ -129,6 +129,7 @@ namespace ProyectoSalud.API
         {
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<ICloudinaryRepository, CloudinaryRepository>();
             services.AddScoped<IConsultationRepository, ConsultationRepository>();
             services.AddScoped<IConsultingRoomRepository, ConsultingRoomRepository>();
             services.AddScoped<IInsureRepository, InsureRepository>();

@@ -23,15 +23,17 @@ namespace ProyectoSalud.API.Controllers
         private readonly IPersonRepository _personRepo;
         private readonly ICityRepository _cityRepo;
         private readonly ITelephoneRepository _telephoneRepo;
+        private readonly ICloudinaryRepository _cloudinaryRepo;
         private readonly IMapper _mapper;
         private readonly ILogger<PatientController> _logger;
-        public PatientController(DataContext context, IMapper mapper, ILogger<PatientController> logger, IInsureRepository insureRepo, IPersonRepository personRepo, ICityRepository cityRepo, ITelephoneRepository telephoneRepo)
+        public PatientController(DataContext context, IMapper mapper, ICloudinaryRepository cloudinaryRepo, ILogger<PatientController> logger, IInsureRepository insureRepo, IPersonRepository personRepo, ICityRepository cityRepo, ITelephoneRepository telephoneRepo)
         {
             _context = context;
             _mapper = mapper;
             _logger = logger;
             _insureRepo = insureRepo;
             _personRepo = personRepo;
+            _cloudinaryRepo = cloudinaryRepo;
             _cityRepo = cityRepo;
             _telephoneRepo = telephoneRepo;
         }
@@ -131,6 +133,31 @@ namespace ProyectoSalud.API.Controllers
                     _logger.LogError(ex.Message);
                     return BadRequest("update_failed");
                 }
+            }
+        }
+
+        [Authorize(Roles = "admin, nurse")]
+        [HttpPut("{personId}/UploadPhoto")]
+        public async Task<IActionResult> UpdatesPatientPhoto(int personId, [FromForm]PhotoForUpdateDto photoForUpdate)
+        {
+            try
+            {
+                var personFromRepo = await _personRepo.GetPerson(personId);
+                if (personFromRepo == null)
+                {
+                    return BadRequest("non_existent_person");
+                }
+                var photoFromRepo = await _cloudinaryRepo.UploadImage(photoForUpdate.ImageFile, "/profilePhotos", personFromRepo.Id);
+
+                personFromRepo.PhotoUrl = photoFromRepo.Url;
+                await _personRepo.UpdatePerson(personFromRepo);
+
+                return Ok(photoFromRepo);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest("error_on_execution");
             }
         }
     }

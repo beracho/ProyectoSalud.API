@@ -38,5 +38,13 @@ namespace ProyectoSalud.API.Repository
 
             return personToCreate;
         }
+
+        public async Task<Person> UpdatePerson(Person personToUpdate)
+        {
+            _context.Persons.Update(personToUpdate);
+            await _context.SaveChangesAsync();
+
+            return personToUpdate;
+        }
     }
 }

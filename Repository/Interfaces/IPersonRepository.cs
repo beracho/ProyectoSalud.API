@@ -8,5 +8,6 @@ namespace ProyectoSalud.API.Repository.Interfaces
         Task<Person> GetPerson(int userId);
         Task<Person> FindPersonByCi(string ci);
         Task<Person> CreatePerson(Person personToCreate);
+        Task<Person> UpdatePerson(Person personToUpdate);
     }
 }

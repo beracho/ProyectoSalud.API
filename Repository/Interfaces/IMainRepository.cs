@@ -15,7 +15,7 @@ namespace ProyectoSalud.API.Data
         Task<User> GetUser(int id);
         Task<User> GetUser(string usernameOrEmail);
         Task<Photo> GetPhoto(int id);
-        Task<Photo> GetMainPhotoForUser(int userId);
+        Task<Photo> GetMainPhotoForPerson(int pesronId);
         int GetCountries();
         Task<Country> GetCountry(int id);
         Task<City> GetCity(int id);

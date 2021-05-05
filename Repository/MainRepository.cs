@@ -46,9 +46,9 @@ namespace ProyectoSalud.API.Data
         //     return await _context.Likes.FirstOrDefaultAsync(u => u.LikerId == userId && u.LikeeId == recipientId);
         // }
 
-        public async Task<Photo> GetMainPhotoForUser(int userId)
+        public async Task<Photo> GetMainPhotoForPerson(int personId)
         {
-            return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+            return await _context.Photos.Where(u => u.PersonId == personId).FirstOrDefaultAsync(p => p.IsMain);
         }
 
         public async Task<Photo> GetPhoto(int id)
