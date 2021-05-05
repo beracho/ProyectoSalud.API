@@ -4,10 +4,14 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProyectoSalud.API.Migrations
 {
-    public partial class sprint1 : Migration
+    public partial class Sprint1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Photos_Users_UserId",
+                table: "Photos");
+
             migrationBuilder.DropForeignKey(
                 name: "FK_UserRols_Users_UserId",
                 table: "UserRols");
@@ -27,6 +31,10 @@ namespace ProyectoSalud.API.Migrations
             migrationBuilder.DropIndex(
                 name: "IX_Users_TelephoneId",
                 table: "Users");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Photos_UserId",
+                table: "Photos");
 
             migrationBuilder.DropColumn(
                 name: "Ci",
@@ -71,6 +79,10 @@ namespace ProyectoSalud.API.Migrations
             migrationBuilder.DropColumn(
                 name: "TelephoneId",
                 table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "UserId",
+                table: "Photos");
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "CreationDate",
@@ -639,6 +651,13 @@ namespace ProyectoSalud.API.Migrations
                 nullable: false,
                 defaultValue: 0);
 
+            migrationBuilder.AddColumn<int>(
+                name: "UserId",
+                table: "Photos",
+                type: "integer",
+                nullable: false,
+                defaultValue: 0);
+
             migrationBuilder.CreateIndex(
                 name: "IX_Users_LocationId",
                 table: "Users",
@@ -648,6 +667,19 @@ namespace ProyectoSalud.API.Migrations
                 name: "IX_Users_TelephoneId",
                 table: "Users",
                 column: "TelephoneId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photos_UserId",
+                table: "Photos",
+                column: "UserId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Photos_Users_UserId",
+                table: "Photos",
+                column: "UserId",
+                principalTable: "Users",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_UserRols_Users_UserId",

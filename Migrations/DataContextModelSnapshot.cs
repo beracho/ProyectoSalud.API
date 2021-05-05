@@ -414,14 +414,9 @@ namespace ProyectoSalud.API.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("text");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PersonId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Photos");
                 });
@@ -707,15 +702,9 @@ namespace ProyectoSalud.API.Migrations
 
             modelBuilder.Entity("ProyectoSalud.API.Models.Photo", b =>
                 {
-                    b.HasOne("ProyectoSalud.API.Models.Person", null)
+                    b.HasOne("ProyectoSalud.API.Models.Person", "Person")
                         .WithMany("Photos")
                         .HasForeignKey("PersonId");
-
-                    b.HasOne("ProyectoSalud.API.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProyectoSalud.API.Models.User", b =>

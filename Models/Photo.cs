@@ -11,7 +11,7 @@ namespace ProyectoSalud.API.Models
         public bool IsMain { get; set; }
         public string PublicId { get; set; }
         public string AssociatedClass { get; set; }
-        public virtual User User { get; set; }
-        public int UserId { get; set; }
+        public virtual Person Person { get; set; }
+        public int? PersonId { get; set; }
     }
 }
